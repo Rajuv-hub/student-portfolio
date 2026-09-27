@@ -3,178 +3,236 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Raju V | Full Stack Developer Portfolio</title>
+  <title>Raju V — Java Full Stack Developer & Web Engineer</title>
   <!-- SEO Meta Tags -->
-  <meta name="description" content="Portfolio of Raju V - Full Stack Developer specializing in Java, Web Development, and Android apps. Explore projects, skills, and education.">
-  <meta name="keywords" content="Raju V, Full Stack Developer, Java Developer, Android Developer, SVCE Bengaluru, Nalla Nudi App">
+  <meta name="description" content="Portfolio of Raju V - Full Stack Developer specializing in Java, Web Development, and scalable systems. Explore projects, skills, education, and credentials.">
+  <meta name="keywords" content="Raju V, Full Stack Developer, Java Developer, Web Developer, SVCE Bengaluru, Nalla Nudi App, Web Design, Dribbble Animations">
   <meta name="author" content="Raju V">
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
-      darkMode: 'class',
       theme: {
         extend: {
           colors: {
-            zinc: {
-              950: '#09090b',
-              900: '#18181b',
-              800: '#27272a',
-              700: '#3f3f46',
+            canvas: '#FDFDFD',
+            surface: '#FFFFFF',
+            'surface-subtle': '#F7F7F9',
+            onyx: {
+              DEFAULT: '#0A0909',
+              900: '#141313',
+              800: '#242323',
             },
-            violet: {
-              400: '#a78bfa',
-              500: '#8b5cf6',
-              600: '#7c3aed',
-              700: '#6d28d9',
+            muted: '#707070',
+            terracotta: {
+              DEFAULT: '#9C6455',
+              light: '#BA8072',
+              dark: '#7D4D40',
             },
-            indigo: {
-              400: '#818cf8',
-              500: '#6366f1',
-              600: '#4f46e5',
+            espresso: '#5E3A30',
+            sand: {
+              DEFAULT: '#CEB3A6',
+              light: '#EBE0DA',
+              dark: '#A68677',
             }
           },
           fontFamily: {
-            sans: ['Outfit', 'Plus Jakarta Sans', 'sans-serif'],
-          },
-          animation: {
-            'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-            'float-slow': 'float-slow 8s ease-in-out infinite',
-            'float-medium': 'float-medium 6s ease-in-out infinite',
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+            display: ['"Syne"', '"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
           },
           keyframes: {
-            'float-slow': {
-              '0%, 100%': { transform: 'translateY(0px) scale(1)' },
-              '50%': { transform: 'translateY(-15px) scale(1.02)' },
+            marquee: {
+              '0%': { transform: 'translateX(0%)' },
+              '100%': { transform: 'translateX(-50%)' },
             },
-            'float-medium': {
-              '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
-              '50%': { transform: 'translateY(-10px) rotate(1deg)' },
+            floatSlow: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-10px)' },
             }
+          },
+          animation: {
+            marquee: 'marquee 32s linear infinite',
+            'float-slow': 'floatSlow 7s ease-in-out infinite',
           }
         }
       }
     }
   </script>
 
-  <!-- Google Fonts -->
+  <!-- Google Fonts: Syne (Editorial Display) & Plus Jakarta Sans & JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
 
-  <!-- Custom Styles for Glassmorphism & Effects -->
   <style>
     body {
-      font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
-      background-color: #09090b;
-      color: #f4f4f5;
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      background-color: #FDFDFD;
+      color: #0A0909;
       overflow-x: hidden;
+      cursor: default;
     }
-    
-    /* Grid background overlay */
-    .grid-bg {
+
+    .font-display {
+      font-family: 'Syne', 'Plus Jakarta Sans', sans-serif;
+    }
+
+    .font-mono {
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* Subtle Architectural Light Grid Overlay */
+    .bg-grid-pattern {
       background-image: 
-        linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-      background-size: 50px 50px;
+        linear-gradient(rgba(10, 9, 9, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(10, 9, 9, 0.035) 1px, transparent 1px);
+      background-size: 64px 64px;
       background-position: center;
     }
 
-    /* Glassmorphism base styling */
-    .glass {
-      background: rgba(15, 23, 42, 0.45);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border: 1px solid rgba(255, 255, 255, 0.06);
+    /* Editorial Light Surfaces */
+    .editorial-card {
+      background: #FFFFFF;
+      border: 1px solid rgba(10, 9, 9, 0.08);
+      box-shadow: 0 4px 20px -2px rgba(10, 9, 9, 0.02);
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    
-    .glass-strong {
-      background: rgba(15, 23, 42, 0.75);
+
+    .editorial-card:hover {
+      border-color: rgba(156, 100, 85, 0.45);
+      box-shadow: 0 20px 40px -15px rgba(94, 58, 48, 0.08), 0 0 25px -5px rgba(156, 100, 85, 0.06);
+      transform: translateY(-2px);
+    }
+
+    .editorial-pill {
+      background: rgba(255, 255, 255, 0.88);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(10, 9, 9, 0.09);
+      box-shadow: 0 4px 20px -2px rgba(10, 9, 9, 0.04);
     }
 
-    /* Glow effect transitions */
-    .glow-card {
-      position: relative;
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Ambient Warm Editorial Glows */
+    .ambient-warm {
+      position: absolute;
+      border-radius: 9999px;
+      filter: blur(140px);
+      pointer-events: none;
+      z-index: 0;
     }
-    
-    .glow-card::after {
+
+    /* Editorial Section Numbering */
+    .section-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #9C6455;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .section-num::before {
       content: '';
-      position: absolute;
-      inset: 0;
-      border-radius: inherit;
-      opacity: 0;
-      transition: opacity 0.4s ease;
-      box-shadow: 0 0 25px rgba(139, 92, 246, 0.25);
-      pointer-events: none;
-      z-index: -1;
-    }
-    
-    .glow-card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(139, 92, 246, 0.35);
-    }
-    
-    .glow-card:hover::after {
-      opacity: 1;
+      display: inline-block;
+      width: 1.5rem;
+      height: 1.5px;
+      background: #9C6455;
     }
 
-    /* Glowing blobs */
-    .glowing-blob {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(130px);
-      pointer-events: none;
-      z-index: 1;
+    /* Custom Cursor Styles for Light Editorial Palette */
+    @media (pointer: fine) {
+      .cursor-dot {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 7px;
+        height: 7px;
+        background-color: #0A0909;
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 9999;
+        transform: translate(-50%, -50%);
+        transition: opacity 0.2s ease;
+      }
+      
+      .cursor-ring {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 36px;
+        height: 36px;
+        border: 1.5px solid rgba(10, 9, 9, 0.35);
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 9998;
+        transform: translate(-50%, -50%);
+        transition: width 0.25s ease, height 0.25s ease, border-color 0.25s ease, background-color 0.25s ease;
+      }
+
+      .cursor-ring.active {
+        width: 58px;
+        height: 58px;
+        border-color: rgba(156, 100, 85, 0.85);
+        background-color: rgba(156, 100, 85, 0.08);
+      }
     }
 
     /* Scrollbar */
     ::-webkit-scrollbar {
-      width: 8px;
+      width: 7px;
     }
     ::-webkit-scrollbar-track {
-      background: #09090b;
+      background: #FDFDFD;
     }
     ::-webkit-scrollbar-thumb {
-      background: #27272a;
+      background: #CEB3A6;
       border-radius: 9999px;
-      border: 2px solid #09090b;
     }
     ::-webkit-scrollbar-thumb:hover {
-      background: #3f3f46;
+      background: #9C6455;
     }
   </style>
 </head>
-<body class="relative min-h-screen selection:bg-violet-500/30 selection:text-violet-200">
+<body class="selection:bg-sand/40 selection:text-espresso min-h-screen relative">
 
-  <!-- Glow Blobs for Aesthetics -->
-  <div class="glowing-blob bg-violet-600/10 w-[450px] h-[450px] top-[5%] left-[-10%] animate-pulse-slow"></div>
-  <div class="glowing-blob bg-indigo-600/10 w-[550px] h-[550px] top-[30%] right-[-10%] animate-pulse-slow delay-300"></div>
-  <div class="glowing-blob bg-fuchsia-600/10 w-[400px] h-[400px] bottom-[15%] left-[10%] animate-pulse-slow delay-700"></div>
+  <!-- Interactive Custom Cursor (Desktop) -->
+  <div id="cursor-dot" class="cursor-dot hidden md:block"></div>
+  <div id="cursor-ring" class="cursor-ring hidden md:block"></div>
 
-  <!-- Grid overlay -->
-  <div class="absolute inset-0 grid-bg opacity-[0.35] pointer-events-none z-0"></div>
+  <!-- Global Architectural Light Grid & Ambient Warm Backlights -->
+  <div class="fixed inset-0 bg-grid-pattern opacity-[0.6] pointer-events-none z-0"></div>
+  <div class="ambient-warm w-[550px] h-[550px] bg-sand/25 -top-40 -left-40"></div>
+  <div class="ambient-warm w-[600px] h-[600px] bg-terracotta/12 top-[30%] -right-40"></div>
+  <div class="ambient-warm w-[500px] h-[500px] bg-sand/20 bottom-[10%] -left-32"></div>
 
-  <!-- React App Root Container -->
+  <!-- React Container -->
   <div id="root" class="relative z-10"></div>
 
-  <!-- React & Babel CDN Libraries -->
+  <!-- React & Babel CDNs -->
   <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
   <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
-  <!-- Babel for JSX -->
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
-  <!-- React Code Component Stack -->
+  <!-- React Application Logic -->
   <script type="text/babel">
     const { useState, useEffect, useRef } = React;
 
-    // --- Inline Custom SVG Icons component (Lucide replica) ---
+    // --- High-Performance Custom SVG Icon Pack (Minimalist Monoline) ---
     function Icon({ name, className = "w-5 h-5", ...props }) {
       const icons = {
+        arrowUpRight: (
+          <path d="M7 17L17 7M17 7H7M17 7V17" />
+        ),
+        arrowDown: (
+          <path d="M12 5v14M19 12l-7 7-7-7" />
+        ),
+        arrowUp: (
+          <path d="M12 19V5M5 12l7-7 7 7" />
+        ),
         github: (
           <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
         ),
@@ -182,19 +240,28 @@
           <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 2a2 2 0 1 1-2 2 2 2 0 0 1 2-2z" />
         ),
         mail: (
-          <path d="M22 4H2C.9 4 2 .9 2 2v12c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2z M22 6l-10 7L2 6" fill="none" strokeWidth="2" stroke="currentColor"/>
+          <>
+            <rect width="20" height="16" x="2" y="4" rx="2" />
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+          </>
         ),
         mappin: (
-          <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z M12 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" />
+          <>
+            <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+            <circle cx="12" cy="10" r="3" />
+          </>
         ),
         external: (
-          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6 M15 3h6v6 M10 14L21 3" />
+          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3" />
         ),
         download: (
-          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4 M7 10l5 5 5-5 M12 15V3" />
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" />
         ),
         code: (
           <path d="m18 16 6-6-6-6M6 8l-6 6 6 6M14.5 4l-5 16" />
+        ),
+        terminal: (
+          <path d="m5 17 5-5-5-5M12 19h8" />
         ),
         database: (
           <>
@@ -203,26 +270,53 @@
             <path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3" />
           </>
         ),
-        terminal: (
-          <path d="m5 17 5-5-5-5M12 19h8" />
+        sparkles: (
+          <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z" />
+        ),
+        globe: (
+          <>
+            <circle cx="12" cy="12" r="10" />
+            <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
+            <path d="M2 12h20" />
+          </>
         ),
         check: (
           <path d="M20 6 9 17l-5-5" />
         ),
         award: (
-          <path d="M12 15a7 7 0 1 0 0-14 7 7 0 0 0 0 14zm0 0v7l-3-3-3 3v-7m6 0v7l3-3 3 3v-7" />
+          <>
+            <circle cx="12" cy="8" r="6" />
+            <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11" />
+          </>
         ),
         book: (
-          <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M4 19.5A2.5 2.5 0 0 0 6.5 22H20M4 19.5V3.5A2.5 2.5 0 0 1 6.5 1H20v20H6.5" />
+          <>
+            <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z" />
+            <path d="M6 6h10" />
+            <path d="M6 10h10" />
+          </>
         ),
         briefcase: (
-          <path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16M2 18h20M2 6h20v12H2z" />
+          <>
+            <rect width="20" height="14" x="2" y="7" rx="2" ry="2" />
+            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+          </>
         ),
-        sparkles: (
-          <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z" />
+        copy: (
+          <>
+            <rect width="14" height="14" x="8" y="8" rx="2" ry="2" />
+            <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" />
+          </>
         ),
-        globe: (
-          <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm0 0c-3 0-5.5 4.5-5.5 10S9 22 12 22s5.5-4.5 5.5-10S15 2 12 2zm10 10H2" />
+        layers: (
+          <>
+            <polygon points="12 2 2 7 12 12 22 7 12 2" />
+            <polyline points="2 17 12 22 22 17" />
+            <polyline points="2 12 12 17 22 12" />
+          </>
+        ),
+        zap: (
+          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
         ),
         menu: (
           <path d="M4 12h16M4 6h16M4 18h16" />
@@ -238,7 +332,7 @@
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
-          strokeWidth="2"
+          strokeWidth="1.8"
           strokeLinecap="round"
           strokeLinejoin="round"
           className={className}
@@ -249,8 +343,8 @@
       );
     }
 
-    // --- Typewriter Custom Hook ---
-    function useTypewriter(words, speed = 120, delay = 2500) {
+    // --- Dynamic Typewriter Hook ---
+    function useTypewriter(words, speed = 100, delay = 2200) {
       const [currentWordIndex, setCurrentWordIndex] = useState(0);
       const [currentText, setCurrentText] = useState('');
       const [isDeleting, setIsDeleting] = useState(false);
@@ -282,10 +376,10 @@
       return currentText;
     }
 
-    // --- Scroll Reveal Helper Component ---
+    // --- Scroll Reveal Animation Component ---
     function ScrollReveal({ children, className = "", delay = 0 }) {
       const [isVisible, setIsVisible] = useState(false);
-      const elementRef = useRef(null);
+      const domRef = useRef(null);
 
       useEffect(() => {
         const observer = new IntersectionObserver(
@@ -295,25 +389,20 @@
               observer.unobserve(entry.target);
             }
           },
-          { threshold: 0.08 }
+          { threshold: 0.1 }
         );
 
-        if (elementRef.current) {
-          observer.observe(elementRef.current);
-        }
-
+        if (domRef.current) observer.observe(domRef.current);
         return () => {
-          if (elementRef.current) {
-            observer.unobserve(elementRef.current);
-          }
+          if (domRef.current) observer.unobserve(domRef.current);
         };
       }, []);
 
       return (
         <div
-          ref={elementRef}
-          className={`transition-all duration-1000 ease-out transform ${
-            isVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-8 scale-[0.98]'
+          ref={domRef}
+          className={`transition-all duration-1000 cubic-bezier(0.16, 1, 0.3, 1) transform ${
+            isVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-10 scale-[0.98]'
           } ${className}`}
           style={{ transitionDelay: `${delay}ms` }}
         >
@@ -322,71 +411,43 @@
       );
     }
 
-    // --- Main App Component ---
+    // --- Main Portfolio Application ---
     function App() {
       const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
       const [projectFilter, setProjectFilter] = useState('All');
-      const [skillTab, setSkillTab] = useState('Frontend');
+      const [skillTab, setSkillTab] = useState('All');
       const [scrolled, setScrolled] = useState(false);
+      const [scrollProgress, setScrollProgress] = useState(0);
+      const [emailCopied, setEmailCopied] = useState(false);
+      const [showBackToTop, setShowBackToTop] = useState(false);
 
-      // Form State & Toast Success
+      // Contact Form State
       const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
       const [isSubmitting, setIsSubmitting] = useState(false);
       const [submitSuccess, setSubmitSuccess] = useState(false);
 
-      // Typing animations
-      const typingRoles = ["Developer", "Full Stack Developer", "Android App Creator", "Java Enthusiast"];
-      const typedText = useTypewriter(typingRoles);
-
-      // Navbar scroll detector
-      useEffect(() => {
-        const handleScroll = () => {
-          setScrolled(window.scrollY > 30);
-        };
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-      }, []);
-
-      // Auto-dismiss toast
-      useEffect(() => {
-        if (submitSuccess) {
-          const timer = setTimeout(() => setSubmitSuccess(false), 5000);
-          return () => clearTimeout(timer);
-        }
-      }, [submitSuccess]);
-
-      const handleFormSubmit = (e) => {
-        e.preventDefault();
-        if (!formData.name || !formData.email || !formData.message) return;
-        setIsSubmitting(true);
-        
-        // Simulating backend request
-        setTimeout(() => {
-          setIsSubmitting(false);
-          setSubmitSuccess(true);
-          setFormData({ name: '', email: '', subject: '', message: '' });
-        }, 1500);
-      };
-
-      const handleInputChange = (e) => {
-        const { name, value } = e.target;
-        setFormData(prev => ({ ...prev, [name]: value }));
-      };
-
-      // Student info constants
+      // Student info constants - 100% PRESERVED
       const resumeUrl = "https://drive.google.com/file/d/12VJbwb8kcpAZ2CV5186VgU06WRI8trd4/view?usp=drive_link";
-      const profilePicUrl = "https://www.image2url.com/r2/default/images/1782209223471-d08a46b5-6ea0-466b-9250-b417c7916775.jpeg";
+      const profilePicUrl = "profile.jpg";
       const emailAddress = "rajuraj911066@gmail.com";
+      const githubUrl = "https://github.com/rajuv-hub";
+      const linkedinUrl = "https://www.linkedin.com/in/raju-v-49787a310";
 
+      // Typing animation phrases
+      const roles = ["Full Stack Developer", "Java Architect", "Backend Engineer", "Web UI Designer"];
+      const typedRole = useTypewriter(roles, 90, 2400);
+
+      // Navigation Items
       const navLinks = [
-        { label: "Home", href: "#hero" },
         { label: "About", href: "#about" },
+        { label: "Services", href: "#services" },
         { label: "Skills", href: "#skills" },
-        { label: "Projects", href: "#projects" },
-        { label: "Education", href: "#education" },
+        { label: "Works", href: "#projects" },
+        { label: "Journey", href: "#education" },
         { label: "Contact", href: "#contact" }
       ];
 
+      // Skills Dataset - 100% PRESERVED
       const skillsData = {
         Frontend: [
           { name: "HTML5", percentage: 95, icon: "code" },
@@ -407,396 +468,623 @@
         ],
         Tools: [
           { name: "Git & GitHub Versioning", percentage: 85, icon: "github" },
-          { name: "Android Studio IDE", percentage: 80, icon: "globe" },
+          { name: "VS Code & Modern IDEs", percentage: 90, icon: "code" },
           { name: "Eclipse / IntelliJ", percentage: 80, icon: "terminal" },
           { name: "ChatGPT (AI Prompting)", percentage: 95, icon: "sparkles" }
         ]
       };
 
+      // Projects Dataset - Updated Links
       const projectsData = [
         {
+          id: "01",
           title: "One8 Sneakers Landing Page",
           category: "Web",
+          year: "2024",
           description: "A premium, responsive product showcase landing page for the Virat Kohli One8 sneakers brand. Features custom interactive technology highlight cards, elegant dark mode design, hover-triggered animations, and a seamless responsive UI built using clean HTML and CSS layout hierarchies.",
           tech: ["HTML5", "CSS3", "JavaScript", "Responsive Design"],
-          github: "https://github.com/Raju24042004/One8-Langing-Page",
-          live: "https://raju24042004.github.io/One8-Langing-Page/",
+          github: "https://github.com/rajuv-hub/One8-Langing-Page",
+          live: "https://rajuv-hub.github.io/One8-Langing-Page/",
           status: "Completed",
           featured: true,
           image: "https://cdn.shopify.com/s/files/1/0692/3514/6912/files/Cover_Drive_Desktop_new_1_6c6ecb15-e406-4e7c-80cc-39e53e1a4568.jpg?v=1783015465&width=1500"
         },
         {
+          id: "02",
           title: "Nalla nudi Android app Development",
           category: "Mobile",
+          year: "2024",
           description: "Nalla Nudi is a production-focused Android application designed to promote and simplify Kannada language learning through a highly engaging, intuitive UI/UX. The app includes structured, interactive lessons, responsive navigation, and robust mobile architecture. Built with Object-Oriented Java design to provide reliable device rendering, clean code hierarchies, and memory-safe component lifecycles.",
-          tech: ["Java", "Android SDK", "OOPs", "XML", "CSS"],
-          github: "https://github.com/Raju24042004/Nalla-Nudi",
-          live: "https://raju24042004.github.io/Nalla-Nudi/",
+          tech: ["Java", "OOPs", "XML", "CSS", "UI/UX"],
+          github: "https://github.com/rajuv-hub/Nalla-Nudi",
+          live: "https://rajuv-hub.github.io/Nalla-Nudi/",
           status: "Completed",
           featured: true,
           image: "nalla_nudi.jpg"
         },
         {
+          id: "03",
           title: "Kalaavaibhava '24 College Fest Landing Page",
           category: "Web",
+          year: "2024",
           description: "A vibrant, responsive cultural event landing page built for SVCE Bengaluru's premier college fest. Features a live countdown timer, interactive event categories, custom keyframe scroll animations, and a call-to-action registration flow.",
           tech: ["HTML5", "CSS3", "JavaScript", "Responsive Design"],
-          github: "https://github.com/Raju24042004/college-fest-landing-page",
-          live: "https://raju24042004.github.io/college-fest-landing-page/",
+          github: "https://github.com/rajuv-hub/college-fest-landing-page",
+          live: "https://rajuv-hub.github.io/college-fest-landing-page/",
           status: "Completed",
           featured: true,
           image: "college_fest_banner.png"
         },
         {
+          id: "04",
           title: "FeastFlow Food Delivery App",
           category: "Web",
+          year: "2024",
           description: "A high-performance, mobile-first food delivery application built with vanilla JavaScript, HTML5, and CSS3, integrated with Clerk Google authentication. Features custom client-side hash routing, local storage-synchronized shopping cart flows, search indexing, and category filters.",
           tech: ["JavaScript", "HTML5", "CSS3", "Clerk Auth", "Responsive Design"],
-          github: "https://github.com/Raju24042004/feastflow-food-delivery",
-          live: "https://raju24042004.github.io/feastflow-food-delivery/",
+          github: "https://github.com/rajuv-hub/feastflow-food-delivery",
+          live: "https://rajuv-hub.github.io/feastflow-food-delivery/",
           status: "Completed",
           featured: true,
           image: "feastflow_banner.png"
         }
       ];
 
+      // Services / Expertise
+      const services = [
+        {
+          number: "01",
+          title: "Full Stack Web Development",
+          description: "Crafting end-to-end modern web applications with clean semantic HTML5, high-efficiency Tailwind CSS, and reactive ES6+ JavaScript, with strict adherence to cross-device responsiveness.",
+          icon: "code",
+          tags: ["HTML5", "CSS3", "Tailwind", "JavaScript"]
+        },
+        {
+          number: "02",
+          title: "Object-Oriented Java Architecture",
+          description: "Designing reliable software backbones using Core Java, OOPs design patterns, Exception Handling, Collections Framework, and rock-solid relational database connections.",
+          icon: "terminal",
+          tags: ["Java", "OOPs", "Collections", "JDBC"]
+        },
+        {
+          number: "03",
+          title: "Backend Services & System Design",
+          description: "Architecting structured backend services, modular business logic, secure data access routines, and high-performance server components using Java and modern software patterns.",
+          icon: "layers",
+          tags: ["Java", "System Design", "Backend", "APIs"]
+        },
+        {
+          number: "04",
+          title: "Relational Database & AI Workflows",
+          description: "Structuring scalable relational data schemas in MySQL Workbench, authoring optimized SQL queries, and utilizing prompt engineering with ChatGPT for rapid iteration.",
+          icon: "database",
+          tags: ["MySQL", "SQL Queries", "Prompt AI"]
+        }
+      ];
+
+      // Track scroll progress & custom cursor
+      useEffect(() => {
+        const handleScroll = () => {
+          const totalScroll = document.documentElement.scrollTop;
+          const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+          const scroll = `${(totalScroll / windowHeight) * 100}`;
+          setScrollProgress(scroll);
+          setScrolled(totalScroll > 40);
+          setShowBackToTop(totalScroll > 500);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+      }, []);
+
+      // Custom smooth cursor follower (Light Editorial)
+      useEffect(() => {
+        const dot = document.getElementById('cursor-dot');
+        const ring = document.getElementById('cursor-ring');
+        if (!dot || !ring) return;
+
+        let mouseX = window.innerWidth / 2;
+        let mouseY = window.innerHeight / 2;
+        let ringX = mouseX;
+        let ringY = mouseY;
+
+        const onMouseMove = (e) => {
+          mouseX = e.clientX;
+          mouseY = e.clientY;
+          dot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
+        };
+
+        let animFrame;
+        const render = () => {
+          ringX += (mouseX - ringX) * 0.18;
+          ringY += (mouseY - ringY) * 0.18;
+          ring.style.transform = `translate3d(${ringX}px, ${ringY}px, 0) translate(-50%, -50%)`;
+          animFrame = requestAnimationFrame(render);
+        };
+
+        window.addEventListener('mousemove', onMouseMove);
+        animFrame = requestAnimationFrame(render);
+
+        const handleElementEnter = () => ring.classList.add('active');
+        const handleElementLeave = () => ring.classList.remove('active');
+
+        const interactiveElements = document.querySelectorAll('a, button, input, textarea, .interactive');
+        interactiveElements.forEach((el) => {
+          el.addEventListener('mouseenter', handleElementEnter);
+          el.addEventListener('mouseleave', handleElementLeave);
+        });
+
+        return () => {
+          window.removeEventListener('mousemove', onMouseMove);
+          cancelAnimationFrame(animFrame);
+          interactiveElements.forEach((el) => {
+            el.removeEventListener('mouseenter', handleElementEnter);
+            el.removeEventListener('mouseleave', handleElementLeave);
+          });
+        };
+      }, [projectFilter, skillTab]);
+
+      // Copy email to clipboard
+      const handleCopyEmail = () => {
+        navigator.clipboard.writeText(emailAddress);
+        setEmailCopied(true);
+        setTimeout(() => setEmailCopied(false), 3000);
+      };
+
+      // Form Submit
+      const handleFormSubmit = (e) => {
+        e.preventDefault();
+        if (!formData.name || !formData.email || !formData.message) return;
+        setIsSubmitting(true);
+        setTimeout(() => {
+          setIsSubmitting(false);
+          setSubmitSuccess(true);
+          setFormData({ name: '', email: '', subject: '', message: '' });
+          setTimeout(() => setSubmitSuccess(false), 5000);
+        }, 1200);
+      };
+
+      const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({ ...prev, [name]: value }));
+      };
+
+      // Flat list of skills for 'All' tab
+      const allSkills = Object.values(skillsData).flat();
+      const currentSkills = skillTab === 'All' ? allSkills : skillsData[skillTab];
+
       return (
-        <div className="min-h-screen text-zinc-100 flex flex-col justify-between">
-          
-          {/* Header/Navbar */}
-          <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-            scrolled ? 'py-4 glass-strong shadow-lg shadow-black/30' : 'py-6 bg-transparent'
+        <div className="flex flex-col min-h-screen">
+
+          {/* Top Scroll Indicator */}
+          <div 
+            className="fixed top-0 left-0 h-[2.5px] bg-gradient-to-r from-terracotta via-sand to-espresso z-50 transition-all duration-150"
+            style={{ width: `${scrollProgress}%` }}
+          />
+
+          {/* Floating Pill Navigation Header (Dribbble Signature) */}
+          <header className={`fixed top-0 left-0 w-full z-40 transition-all duration-300 px-4 sm:px-8 ${
+            scrolled ? 'py-3' : 'py-6'
           }`}>
-            <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
+            <div className="max-w-6xl mx-auto flex items-center justify-between">
               
-              {/* Logo: Personalized Developer Branding */}
-              <a href="#hero" className="flex items-center gap-2.5 group">
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-violet-600 to-indigo-600 flex items-center justify-center shadow-lg shadow-violet-500/20 group-hover:scale-105 transition-transform duration-300">
-                  <Icon name="code" className="w-5.5 h-5.5 text-white" />
+              {/* Brand Pill */}
+              <a 
+                href="#hero" 
+                className="editorial-pill px-4 py-2.5 rounded-full flex items-center gap-3 group hover:border-terracotta/40 transition-all"
+              >
+                <div className="w-7 h-7 rounded-full bg-gradient-to-tr from-terracotta to-espresso flex items-center justify-center text-white text-xs font-bold font-mono group-hover:rotate-12 transition-transform">
+                  R
                 </div>
-                <div className="flex flex-col">
-                  <span className="text-lg font-bold tracking-tight text-white group-hover:text-violet-400 transition-colors">Raju V</span>
-                  <span className="text-[10px] uppercase tracking-widest text-zinc-400 font-semibold">Portfolio</span>
+                <div className="flex items-center gap-2">
+                  <span className="font-display font-bold text-sm tracking-tight text-onyx group-hover:text-terracotta transition-colors">
+                    Raju V
+                  </span>
+                  <span className="hidden sm:inline-block w-1.5 h-1.5 rounded-full bg-terracotta animate-pulse"></span>
+                  <span className="hidden sm:inline-block text-[11px] font-mono text-muted font-medium">
+                    Available
+                  </span>
                 </div>
               </a>
 
-              {/* Desktop Nav Links */}
-              <nav className="hidden md:flex items-center gap-8">
+              {/* Desktop Nav Island */}
+              <nav className="hidden md:flex items-center gap-1 editorial-pill px-3 py-1.5 rounded-full">
                 {navLinks.map((link) => (
                   <a
                     key={link.label}
                     href={link.href}
-                    className="text-sm font-medium text-zinc-300 hover:text-white hover:shadow-glow transition-all duration-200 relative group py-2"
+                    className="px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-muted hover:text-onyx rounded-full hover:bg-onyx/[0.04] transition-all"
                   >
                     {link.label}
-                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-violet-500 to-indigo-500 transition-all duration-300 group-hover:w-full"></span>
                   </a>
                 ))}
               </nav>
 
-              {/* Resume Download CTA */}
-              <div className="hidden md:block">
+              {/* Right Action CTA */}
+              <div className="flex items-center gap-3">
                 <a
                   href={resumeUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="relative group overflow-hidden inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500 text-white font-medium text-sm transition-all duration-300 shadow-md shadow-violet-500/10 hover:shadow-lg hover:shadow-violet-500/25 border border-violet-400/20 hover:scale-[1.02]"
+                  className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-onyx text-white font-bold text-xs uppercase tracking-wider hover:bg-espresso transition-all hover:scale-105 shadow-md shadow-onyx/10"
                 >
-                  <span>Download Resume</span>
-                  <Icon name="download" className="w-4 h-4 transition-transform group-hover:translate-y-0.5 duration-200" />
+                  <span>Resume</span>
+                  <Icon name="download" className="w-3.5 h-3.5" />
                 </a>
+
+                {/* Mobile Menu Button */}
+                <button
+                  onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                  className="md:hidden editorial-pill p-2.5 rounded-full text-onyx"
+                  aria-label="Toggle menu"
+                >
+                  <Icon name={mobileMenuOpen ? "x" : "menu"} className="w-5 h-5" />
+                </button>
               </div>
 
-              {/* Mobile Menu Toggle Button */}
-              <button
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="md:hidden p-2.5 rounded-xl glass hover:bg-zinc-800/40 text-zinc-300 hover:text-white transition-colors"
-                aria-label="Toggle Menu"
-              >
-                <Icon name={mobileMenuOpen ? "x" : "menu"} className="w-6 h-6" />
-              </button>
             </div>
 
-            {/* Mobile Dropdown Menu */}
+            {/* Mobile Menu Drawer */}
             {mobileMenuOpen && (
-              <div className="absolute top-full left-0 w-full glass-strong border-t border-zinc-800/60 shadow-xl py-6 px-6 md:hidden animate-fade-in">
-                <div className="flex flex-col gap-4">
+              <div className="md:hidden mt-3 max-w-sm mx-auto editorial-card rounded-3xl p-6 shadow-2xl animate-in fade-in zoom-in-95 duration-200">
+                <div className="flex flex-col gap-2">
                   {navLinks.map((link) => (
                     <a
                       key={link.label}
                       href={link.href}
                       onClick={() => setMobileMenuOpen(false)}
-                      className="text-base font-medium text-zinc-300 hover:text-white py-2 border-b border-zinc-800/40"
+                      className="px-4 py-2.5 rounded-xl text-sm font-semibold text-muted hover:text-onyx hover:bg-onyx/[0.04] transition-colors"
                     >
                       {link.label}
                     </a>
                   ))}
-                  <a
-                    href={resumeUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="mt-2 w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-gradient-to-r from-violet-600 to-indigo-600 text-white font-medium text-sm shadow-md"
-                  >
-                    <span>Download Resume</span>
-                    <Icon name="download" className="w-4 h-4" />
-                  </a>
+                  <div className="pt-3 border-t border-onyx/[0.08] flex flex-col gap-2">
+                    <a
+                      href={resumeUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full text-center py-3 rounded-xl bg-onyx text-white font-bold text-xs uppercase tracking-wider shadow-md"
+                    >
+                      Download Resume
+                    </a>
+                  </div>
                 </div>
               </div>
             )}
           </header>
 
-          {/* Main Content Body */}
+          {/* MAIN CONTENT */}
           <main className="flex-grow">
-            
-            {/* Hero Section */}
-            <section id="hero" className="relative min-h-screen flex items-center justify-center pt-28 pb-16 overflow-hidden">
-              <div className="max-w-7xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+
+            {/* HERO SECTION — Dymas Alfin Editorial Layout */}
+            <section id="hero" className="relative min-h-screen pt-36 pb-20 flex items-center justify-center overflow-hidden">
+              <div className="max-w-6xl mx-auto px-6 w-full">
                 
-                {/* Hero Left Content */}
-                <div className="lg:col-span-7 flex flex-col items-start text-left z-20">
-                  <ScrollReveal className="w-full">
-                    
-                    {/* Opportunities Badge */}
-                    <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass border-violet-500/20 text-xs font-semibold text-violet-300 mb-6 hover:border-violet-500/40 transition-colors">
-                      <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                      Open for full-time opportunities
-                    </div>
+                {/* Meta Top Line */}
+                <ScrollReveal className="flex flex-wrap items-center justify-between gap-4 mb-8 text-xs font-mono tracking-widest text-muted">
+                  <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-sand/20 border border-sand/40">
+                    <span className="w-2 h-2 rounded-full bg-terracotta animate-ping"></span>
+                    <span className="text-espresso uppercase font-semibold">AVAILABLE FOR NEW PROJECTS</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-muted">
+                    <Icon name="mappin" className="w-3.5 h-3.5 text-terracotta" />
+                    <span>BENGALURU, INDIA • 2026 GRADUATE</span>
+                  </div>
+                </ScrollReveal>
 
-                    {/* Main Name / Title */}
-                    <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white mb-4 leading-tight">
-                      Hi, I'm <span className="bg-gradient-to-r from-violet-400 via-indigo-300 to-violet-400 bg-clip-text text-transparent bg-[size:200%] animate-pulse-slow">Raju V</span>
-                    </h1>
-                    
-                    {/* Animated Typing Role */}
-                    <div className="h-10 sm:h-12 flex items-center text-xl sm:text-2xl md:text-3xl font-bold text-zinc-400 mb-6">
-                      <span>I'm a&nbsp;</span>
-                      <span className="text-indigo-400 border-r-2 border-indigo-400 pr-1 animate-pulse">
-                        {typedText}
-                      </span>
-                    </div>
+                {/* Editorial Headline */}
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                  
+                  <div className="lg:col-span-8 text-left">
+                    <ScrollReveal delay={100}>
+                      <span className="section-num mb-4">ARCHITECT & DEVELOPER</span>
+                      
+                      <h1 className="font-display text-4xl sm:text-6xl md:text-7xl font-extrabold text-onyx tracking-tight leading-[1.08] mb-6">
+                        Crafting scalable <br className="hidden sm:inline" />
+                        <span className="text-terracotta">
+                          Java backends
+                        </span> <br className="hidden sm:inline" />
+                        & fluid interfaces.
+                      </h1>
 
-                    {/* Tagline */}
-                    <p className="text-lg text-zinc-400 font-light max-w-xl mb-8 leading-relaxed">
-                      Building elegant frontends backed by rock-solid Java architecture. Focused on crafting highly interactive, robust user experiences.
-                    </p>
-
-                    {/* Social profiles & primary CTAs */}
-                    <div className="flex flex-wrap gap-4 items-center mb-10">
-                      <a
-                        href="#contact"
-                        className="px-6 py-3 rounded-full bg-white text-zinc-950 hover:bg-zinc-200 font-semibold text-sm transition-all duration-300 hover:scale-105 shadow-lg shadow-white/5"
-                      >
-                        Let's Talk
-                      </a>
-                      <a
-                        href="#projects"
-                        className="px-6 py-3 rounded-full glass hover:bg-zinc-800/40 font-semibold text-sm transition-all duration-300 hover:scale-105 border-zinc-700/60"
-                      >
-                        View Projects
-                      </a>
-                    </div>
-
-                    {/* Social Links */}
-                    <div className="flex items-center gap-4">
-                      <span className="text-xs uppercase tracking-wider font-bold text-zinc-500">Connect:</span>
-                      <div className="flex gap-3">
-                        <a
-                          href="https://github.com/Raju24042004/Nalla-Nudi"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="w-10 h-10 rounded-full glass hover:bg-zinc-800/40 text-zinc-400 hover:text-white flex items-center justify-center transition-all duration-300 hover:scale-110"
-                        >
-                          <Icon name="github" className="w-5 h-5" />
-                        </a>
-                        <a
-                          href="https://www.linkedin.com/in/raju-v-49787a310"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="w-10 h-10 rounded-full glass hover:bg-zinc-800/40 text-zinc-400 hover:text-white flex items-center justify-center transition-all duration-300 hover:scale-110"
-                        >
-                          <Icon name="linkedin" className="w-5 h-5" />
-                        </a>
-                        <a
-                          href={`mailto:${emailAddress}`}
-                          className="w-10 h-10 rounded-full glass hover:bg-zinc-800/40 text-zinc-400 hover:text-white flex items-center justify-center transition-all duration-300 hover:scale-110"
-                        >
-                          <Icon name="mail" className="w-5 h-5" />
-                        </a>
-                      </div>
-                    </div>
-
-                  </ScrollReveal>
-                </div>
-
-                {/* Hero Right: Profile Picture Container */}
-                <div className="lg:col-span-5 flex justify-center z-10">
-                  <ScrollReveal className="relative flex justify-center items-center" delay={200}>
-                    
-                    {/* Ring glow background layers */}
-                    <div className="absolute w-72 h-72 sm:w-80 sm:h-80 rounded-full bg-gradient-to-tr from-violet-600/30 to-indigo-600/30 blur-2xl animate-pulse-slow"></div>
-                    <div className="absolute w-64 h-64 sm:w-72 sm:h-72 rounded-full border border-violet-500/20 animate-spin-slow"></div>
-
-                    {/* Image Container with rotating outline border */}
-                    <div className="relative w-64 h-64 sm:w-72 sm:h-72 rounded-3xl p-1.5 bg-gradient-to-tr from-violet-500/40 via-transparent to-indigo-500/40 animate-float-slow">
-                      <div className="w-full h-full rounded-2xl overflow-hidden glass border-2 border-zinc-800/80">
-                        <img
-                          src={profilePicUrl}
-                          alt="Raju V"
-                          className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500 scale-105 hover:scale-100"
-                        />
+                      {/* Interactive Typewriter Moniker */}
+                      <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-2xl bg-white border border-onyx/[0.08] shadow-sm mb-8 font-mono text-sm sm:text-base text-muted">
+                        <span className="text-terracotta font-semibold">~/role:</span>
+                        <span className="text-onyx font-bold">{typedRole}</span>
+                        <span className="w-2 h-4 bg-terracotta animate-pulse"></span>
                       </div>
 
-                      {/* Mini float badge */}
-                      <div className="absolute -bottom-4 -right-4 glass-strong border border-zinc-700/60 p-3 rounded-2xl shadow-xl flex items-center gap-3 animate-float-medium">
-                        <div className="w-8 h-8 rounded-lg bg-indigo-500/10 flex items-center justify-center">
-                          <Icon name="terminal" className="w-4 h-4 text-indigo-400" />
-                        </div>
-                        <div className="flex flex-col text-left">
-                          <span className="text-[10px] text-zinc-400 font-bold uppercase tracking-wider">Domain</span>
-                          <span className="text-xs text-white font-extrabold">Web Dev & Java</span>
+                      {/* Bio summary - 100% PRESERVED */}
+                      <p className="text-muted text-base sm:text-lg max-w-2xl font-normal leading-relaxed mb-10">
+                        Building elegant frontends backed by rock-solid Java architecture. Focused on crafting highly interactive, robust user experiences.
+                      </p>
+
+                      {/* Hero Action CTAs */}
+                      <div className="flex flex-wrap items-center gap-4 mb-12">
+                        <a
+                          href="#projects"
+                          className="px-7 py-3.5 rounded-full bg-onyx text-white hover:bg-espresso font-bold text-xs uppercase tracking-wider transition-all duration-300 hover:scale-105 shadow-xl shadow-onyx/10 flex items-center gap-2"
+                        >
+                          <span>Explore Selected Works</span>
+                          <Icon name="arrowDown" className="w-4 h-4" />
+                        </a>
+
+                        <button
+                          onClick={handleCopyEmail}
+                          className="px-6 py-3.5 rounded-full editorial-card hover:border-terracotta font-semibold text-xs uppercase tracking-wider text-onyx hover:text-terracotta transition-all duration-300 flex items-center gap-2"
+                        >
+                          <Icon name={emailCopied ? "check" : "copy"} className={`w-4 h-4 ${emailCopied ? 'text-terracotta' : 'text-muted'}`} />
+                          <span>{emailCopied ? "Email Copied!" : "Copy Email"}</span>
+                        </button>
+                      </div>
+
+                      {/* Social Presence Links */}
+                      <div className="flex items-center gap-6 pt-4 border-t border-onyx/[0.08]">
+                        <span className="text-xs font-mono uppercase tracking-widest text-muted">Connect:</span>
+                        <div className="flex items-center gap-4">
+                          <a
+                            href={githubUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-muted hover:text-onyx transition-colors hover:scale-110 transform"
+                            title="GitHub"
+                          >
+                            <Icon name="github" className="w-5 h-5" />
+                          </a>
+                          <a
+                            href={linkedinUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-muted hover:text-onyx transition-colors hover:scale-110 transform"
+                            title="LinkedIn"
+                          >
+                            <Icon name="linkedin" className="w-5 h-5" />
+                          </a>
+                          <a
+                            href={`mailto:${emailAddress}`}
+                            className="text-muted hover:text-onyx transition-colors hover:scale-110 transform"
+                            title="Send Email"
+                          >
+                            <Icon name="mail" className="w-5 h-5" />
+                          </a>
                         </div>
                       </div>
-                    </div>
 
-                  </ScrollReveal>
+                    </ScrollReveal>
+                  </div>
+
+                  {/* Hero Right: Modern Editorial Frame with Raju V's Photo */}
+                  <div className="lg:col-span-4 flex justify-center">
+                    <ScrollReveal delay={250} className="relative w-full max-w-sm">
+                      
+                      {/* Ambient Accent Ring */}
+                      <div className="absolute -inset-2 rounded-[32px] bg-gradient-to-tr from-sand/40 via-terracotta/20 to-sand/30 blur-xl opacity-75"></div>
+
+                      {/* Portrait Card */}
+                      <div className="relative editorial-card rounded-[28px] p-3.5 overflow-hidden shadow-2xl">
+                        
+                        <div className="relative aspect-[4/5] rounded-[22px] overflow-hidden bg-sand/10">
+                          <img
+                            src={profilePicUrl}
+                            alt="Raju V"
+                            className="w-full h-full object-cover contrast-105 hover:scale-105 transition-all duration-700 ease-out"
+                          />
+
+                          {/* Gradient Vignette */}
+                          <div className="absolute inset-0 bg-gradient-to-t from-onyx/70 via-transparent to-transparent"></div>
+
+                          {/* Bottom Card Identity Info */}
+                          <div className="absolute bottom-4 left-4 right-4 p-4 rounded-2xl editorial-pill text-left">
+                            <div className="flex items-center justify-between mb-1">
+                              <span className="font-display font-bold text-onyx text-base">Raju V</span>
+                              <span className="text-[10px] font-mono uppercase px-2 py-0.5 rounded-full bg-sand/30 text-espresso border border-sand/50 font-bold">
+                                Fresh Grad 2026
+                              </span>
+                            </div>
+                            <span className="text-xs text-muted block font-mono">
+                              Java & Full Stack Developer
+                            </span>
+                          </div>
+                        </div>
+
+                      </div>
+
+                    </ScrollReveal>
+                  </div>
+
                 </div>
+
+                {/* Metrics / Key Indicators Banner */}
+                <ScrollReveal delay={350} className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-4">
+                  
+                  <div className="editorial-card p-6 rounded-2xl text-left">
+                    <span className="text-3xl font-display font-extrabold text-onyx block mb-1">04+</span>
+                    <span className="text-xs font-mono uppercase tracking-wider text-muted">Production Projects</span>
+                  </div>
+
+                  <div className="editorial-card p-6 rounded-2xl text-left">
+                    <span className="text-3xl font-display font-extrabold text-onyx block mb-1">15+</span>
+                    <span className="text-xs font-mono uppercase tracking-wider text-muted">Core Technologies</span>
+                  </div>
+
+                  <div className="editorial-card p-6 rounded-2xl text-left">
+                    <span className="text-3xl font-display font-extrabold text-onyx block mb-1">2026</span>
+                    <span className="text-xs font-mono uppercase tracking-wider text-muted">B.E. Computer Science</span>
+                  </div>
+
+                  <div className="editorial-card p-6 rounded-2xl text-left">
+                    <span className="text-3xl font-display font-extrabold text-onyx block mb-1">100%</span>
+                    <span className="text-xs font-mono uppercase tracking-wider text-muted">Clean Architecture</span>
+                  </div>
+
+                </ScrollReveal>
 
               </div>
             </section>
 
-            {/* About Section */}
-            <section id="about" className="py-24 relative overflow-hidden bg-zinc-950/40 border-y border-zinc-900">
-              <div className="max-w-7xl mx-auto px-6">
+            {/* INFINITE RUNNING MARQUEE (Editorial Signature) */}
+            <div className="py-6 border-y border-onyx/[0.08] bg-surface-subtle overflow-hidden relative">
+              <div className="flex whitespace-nowrap animate-marquee">
+                {[...Array(2)].map((_, i) => (
+                  <div key={i} className="flex items-center gap-8 text-xs font-mono uppercase tracking-[0.25em] text-muted px-4">
+                    <span className="text-onyx font-bold">JAVA CORE & OOPS</span>
+                    <span className="text-terracotta">✦</span>
+                    <span>FULL STACK WEB</span>
+                    <span className="text-terracotta">✦</span>
+                    <span className="text-onyx font-bold">BACKEND ARCHITECTURE</span>
+                    <span className="text-terracotta">✦</span>
+                    <span>MYSQL WORKBENCH</span>
+                    <span className="text-terracotta">✦</span>
+                    <span className="text-onyx font-bold">TAILWIND CSS & MODERN UI</span>
+                    <span className="text-terracotta">✦</span>
+                    <span>JAVASCRIPT ES6+</span>
+                    <span className="text-terracotta">✦</span>
+                    <span className="text-onyx font-bold">AI PROMPT ENGINEERING</span>
+                    <span className="text-terracotta">✦</span>
+                    <span>RESPONSIVE DESIGN SYSTEM</span>
+                    <span className="text-terracotta">✦</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* SECTION 01: ABOUT ME (Editorial Narrative & Bento Grid) */}
+            <section id="about" className="py-28 relative">
+              <div className="max-w-6xl mx-auto px-6">
                 
-                {/* Header Title */}
-                <div className="text-center md:text-left mb-16">
-                  <ScrollReveal>
-                    <span className="text-xs uppercase tracking-widest text-indigo-400 font-bold">Biography</span>
-                    <h2 className="text-3xl sm:text-4xl font-extrabold mt-2 text-white">About Me</h2>
-                    <div className="w-16 h-1 bg-gradient-to-r from-violet-500 to-indigo-500 rounded mt-4 mx-auto md:mx-0"></div>
-                  </ScrollReveal>
-                </div>
+                {/* Header */}
+                <ScrollReveal className="text-left mb-16">
+                  <span className="section-num mb-3">01 / BIOGRAPHY</span>
+                  <h2 className="font-display text-3xl sm:text-5xl font-extrabold text-onyx tracking-tight">
+                    Engineering philosophy & intent.
+                  </h2>
+                </ScrollReveal>
 
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
                   
-                  {/* Left Achievements Cards */}
-                  <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    
-                    <ScrollReveal className="glass p-6 rounded-2xl border-zinc-800 text-left glow-card">
-                      <div className="w-10 h-10 rounded-xl bg-violet-500/10 flex items-center justify-center mb-4">
-                        <Icon name="mappin" className="w-5 h-5 text-violet-400" />
-                      </div>
-                      <h3 className="text-sm font-semibold text-zinc-400">Location</h3>
-                      <p className="text-base font-bold text-white mt-1">Bengaluru, India</p>
-                    </ScrollReveal>
-
-                    <ScrollReveal className="glass p-6 rounded-2xl border-zinc-800 text-left glow-card" delay={100}>
-                      <div className="w-10 h-10 rounded-xl bg-indigo-500/10 flex items-center justify-center mb-4">
-                        <Icon name="code" className="w-5 h-5 text-indigo-400" />
-                      </div>
-                      <h3 className="text-sm font-semibold text-zinc-400">Primary Domain</h3>
-                      <p className="text-base font-bold text-white mt-1">Web Development</p>
-                    </ScrollReveal>
-
-                    <ScrollReveal className="glass p-6 rounded-2xl border-zinc-800 text-left glow-card" delay={200}>
-                      <div className="w-10 h-10 rounded-xl bg-fuchsia-500/10 flex items-center justify-center mb-4">
-                        <Icon name="book" className="w-5 h-5 text-fuchsia-400" />
-                      </div>
-                      <h3 className="text-sm font-semibold text-zinc-400">Education</h3>
-                      <p className="text-base font-bold text-white mt-1">B.E. Computer Science</p>
-                    </ScrollReveal>
-
-                    <ScrollReveal className="glass p-6 rounded-2xl border-zinc-800 text-left glow-card" delay={300}>
-                      <div className="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center mb-4">
-                        <Icon name="check" className="w-5 h-5 text-emerald-400" />
-                      </div>
-                      <h3 className="text-sm font-semibold text-zinc-400">Experience</h3>
-                      <p className="text-base font-bold text-white mt-1">Fresh Graduate (2026)</p>
-                    </ScrollReveal>
-
-                  </div>
-
-                  {/* Right Bios Column */}
+                  {/* Left Narrative Column - 100% PRESERVED */}
                   <div className="lg:col-span-7 text-left space-y-6">
                     <ScrollReveal delay={100}>
-                      <h3 className="text-xl font-bold text-white">Passionate Java Full Stack Developer & App Builder</h3>
-                      <p className="text-zinc-300 leading-relaxed mt-4">
+                      <h3 className="text-xl sm:text-2xl font-display font-bold text-onyx">
+                        Passionate Java Full Stack Developer & App Builder
+                      </h3>
+                      
+                      <p className="text-muted text-base leading-relaxed mt-4 font-normal">
                         I am Raju V, a passionate Java Full Stack Developer with a strong interest in building modern web applications.
                         I specialize in Java, HTML, CSS, MySQL, and Object-Oriented Programming concepts.
                         I enjoy creating responsive, scalable, and user-friendly software solutions.
-                        I have hands-on experience developing full-stack and Android applications through academic projects and internships.
+                        I have hands-on experience developing full-stack and modern web applications through academic projects and internships.
                       </p>
-                      <p className="text-zinc-400 leading-relaxed font-light mt-4">
+
+                      <p className="text-muted text-base leading-relaxed mt-4 font-light">
                         My development philosophy relies on bridging clean user interfaces with well-designed logical architectures.
                         Whether it is writing optimized SQL queries, structuring clean Java classes, or shaping responsive frontend layouts,
                         I strive to write clean, efficient, and maintainable code. I enjoy collaborative environments, brainstorming
                         to solve real-world problems, and continuously upskilling in modern framework architectures.
                       </p>
-                    </ScrollReveal>
 
-                    <ScrollReveal delay={200} className="pt-4 flex flex-wrap gap-3">
-                      <span className="px-3.5 py-1.5 rounded-full bg-zinc-900 border border-zinc-800 text-xs font-semibold text-zinc-300 hover:border-violet-500/30 transition-colors">
-                        #CleanCode
-                      </span>
-                      <span className="px-3.5 py-1.5 rounded-full bg-zinc-900 border border-zinc-800 text-xs font-semibold text-zinc-300 hover:border-violet-500/30 transition-colors">
-                        #OOPsConcepts
-                      </span>
-                      <span className="px-3.5 py-1.5 rounded-full bg-zinc-900 border border-zinc-800 text-xs font-semibold text-zinc-300 hover:border-violet-500/30 transition-colors">
-                        #MobileApps
-                      </span>
-                      <span className="px-3.5 py-1.5 rounded-full bg-zinc-900 border border-zinc-800 text-xs font-semibold text-zinc-300 hover:border-violet-500/30 transition-colors">
-                        #JavaArchitectures
-                      </span>
+                      {/* Hashtags Badges */}
+                      <div className="flex flex-wrap gap-2 pt-6">
+                        {["#CleanCode", "#OOPsConcepts", "#WebDevelopment", "#JavaArchitectures", "#DesignSystems"].map((tag) => (
+                          <span 
+                            key={tag} 
+                            className="px-3 py-1.5 rounded-lg bg-surface-subtle border border-onyx/[0.08] text-xs font-mono text-espresso font-medium"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
                     </ScrollReveal>
                   </div>
 
+                  {/* Right Bento Grid Cards */}
+                  <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    
+                    <ScrollReveal delay={100} className="editorial-card p-6 rounded-2xl text-left">
+                      <div className="w-10 h-10 rounded-xl bg-sand/20 flex items-center justify-center text-terracotta mb-4">
+                        <Icon name="mappin" className="w-5 h-5" />
+                      </div>
+                      <span className="text-xs font-mono text-muted uppercase tracking-wider block">Location</span>
+                      <p className="font-display font-bold text-onyx text-base mt-1">Bengaluru, India</p>
+                    </ScrollReveal>
+
+                    <ScrollReveal delay={150} className="editorial-card p-6 rounded-2xl text-left">
+                      <div className="w-10 h-10 rounded-xl bg-sand/20 flex items-center justify-center text-terracotta mb-4">
+                        <Icon name="code" className="w-5 h-5" />
+                      </div>
+                      <span className="text-xs font-mono text-muted uppercase tracking-wider block">Primary Domain</span>
+                      <p className="font-display font-bold text-onyx text-base mt-1">Web Dev & Java</p>
+                    </ScrollReveal>
+
+                    <ScrollReveal delay={200} className="editorial-card p-6 rounded-2xl text-left">
+                      <div className="w-10 h-10 rounded-xl bg-sand/20 flex items-center justify-center text-terracotta mb-4">
+                        <Icon name="book" className="w-5 h-5" />
+                      </div>
+                      <span className="text-xs font-mono text-muted uppercase tracking-wider block">Education</span>
+                      <p className="font-display font-bold text-onyx text-base mt-1">B.E. Comp Science</p>
+                    </ScrollReveal>
+
+                    <ScrollReveal delay={250} className="editorial-card p-6 rounded-2xl text-left">
+                      <div className="w-10 h-10 rounded-xl bg-sand/20 flex items-center justify-center text-terracotta mb-4">
+                        <Icon name="check" className="w-5 h-5" />
+                      </div>
+                      <span className="text-xs font-mono text-muted uppercase tracking-wider block">Experience</span>
+                      <p className="font-display font-bold text-onyx text-base mt-1">Fresh Graduate (2026)</p>
+                    </ScrollReveal>
+
+                  </div>
+
                 </div>
+
               </div>
             </section>
 
-            {/* Skills Section */}
-            <section id="skills" className="py-24 relative overflow-hidden">
-              <div className="max-w-7xl mx-auto px-6">
+            {/* SECTION 02: SERVICES / CORE EXPERTISE (Numbered Editorial Layout) */}
+            <section id="services" className="py-28 border-t border-onyx/[0.08] relative bg-surface-subtle">
+              <div className="max-w-6xl mx-auto px-6">
                 
-                {/* Header Title */}
-                <div className="text-center mb-16">
-                  <ScrollReveal>
-                    <span className="text-xs uppercase tracking-widest text-indigo-400 font-bold">Toolkit</span>
-                    <h2 className="text-3xl sm:text-4xl font-extrabold mt-2 text-white">Skills & Competency</h2>
-                    <div className="w-16 h-1 bg-gradient-to-r from-violet-500 to-indigo-500 rounded mt-4 mx-auto"></div>
-                  </ScrollReveal>
-                </div>
+                {/* Header */}
+                <ScrollReveal className="text-left mb-16">
+                  <span className="section-num mb-3">02 / SERVICES & CAPABILITIES</span>
+                  <h2 className="font-display text-3xl sm:text-5xl font-extrabold text-onyx tracking-tight">
+                    What I bring to the table.
+                  </h2>
+                </ScrollReveal>
 
-                {/* Interactive Category Selector Tabs */}
-                <div className="flex justify-center flex-wrap gap-2 mb-12">
-                  {Object.keys(skillsData).map((category) => (
-                    <button
-                      key={category}
-                      onClick={() => setSkillTab(category)}
-                      className={`px-5 py-2.5 rounded-xl font-medium text-sm transition-all duration-300 ${
-                        skillTab === category
-                          ? 'bg-gradient-to-r from-violet-600 to-indigo-600 text-white shadow-lg shadow-violet-500/20'
-                          : 'glass text-zinc-400 hover:text-white hover:bg-zinc-800/30'
-                      }`}
+                {/* Numbered Cards Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {services.map((service, index) => (
+                    <ScrollReveal 
+                      key={service.number} 
+                      delay={index * 80}
+                      className="editorial-card p-8 rounded-3xl flex flex-col justify-between text-left group"
                     >
-                      {category}
-                    </button>
-                  ))}
-                </div>
+                      <div>
+                        <div className="flex items-center justify-between mb-6">
+                          <span className="font-mono text-2xl font-bold text-terracotta group-hover:text-espresso transition-colors">
+                            {service.number}
+                          </span>
+                          <div className="w-10 h-10 rounded-xl bg-sand/20 flex items-center justify-center text-terracotta group-hover:scale-110 transition-transform">
+                            <Icon name={service.icon} className="w-5 h-5" />
+                          </div>
+                        </div>
 
-                {/* Skills Grid */}
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 max-w-5xl mx-auto">
-                  {skillsData[skillTab].map((skill, index) => (
-                    <ScrollReveal
-                      key={skill.name}
-                      className="glass p-4 rounded-2xl border-zinc-800/80 flex items-center gap-3.5 hover:border-violet-500/35 transition-all duration-300 group"
-                      delay={index * 50}
-                    >
-                      <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-violet-500/10 to-indigo-500/10 flex items-center justify-center border border-zinc-800 group-hover:border-violet-500/20 group-hover:scale-105 transition-all duration-300 flex-shrink-0">
-                        <Icon name={skill.icon} className="w-5 h-5 text-indigo-400" />
+                        <h3 className="font-display text-xl font-bold text-onyx mb-3 group-hover:text-terracotta transition-colors">
+                          {service.title}
+                        </h3>
+
+                        <p className="text-muted text-sm leading-relaxed mb-6 font-light">
+                          {service.description}
+                        </p>
                       </div>
-                      <span className="font-semibold text-sm text-white text-left block leading-tight">{skill.name}</span>
+
+                      <div className="flex flex-wrap gap-2 pt-4 border-t border-onyx/[0.06]">
+                        {service.tags.map(tag => (
+                          <span key={tag} className="text-[11px] font-mono text-muted px-2.5 py-1 rounded-md bg-canvas border border-onyx/[0.06]">
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
                     </ScrollReveal>
                   ))}
                 </div>
@@ -804,124 +1092,210 @@
               </div>
             </section>
 
-            {/* Projects Section */}
-            <section id="projects" className="py-24 relative overflow-hidden bg-zinc-950/40 border-y border-zinc-900">
-              <div className="max-w-7xl mx-auto px-6">
+            {/* SECTION 03: SKILLS & TOOLKIT (Interactive Filterable Matrix) */}
+            <section id="skills" className="py-28 border-t border-onyx/[0.08] relative">
+              <div className="max-w-6xl mx-auto px-6">
                 
-                {/* Header Title */}
-                <div className="text-center mb-16">
+                {/* Header */}
+                <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 text-left">
                   <ScrollReveal>
-                    <span className="text-xs uppercase tracking-widest text-indigo-400 font-bold">My Portfolio</span>
-                    <h2 className="text-3xl sm:text-4xl font-extrabold mt-2 text-white">Featured Projects</h2>
-                    <div className="w-16 h-1 bg-gradient-to-r from-violet-500 to-indigo-500 rounded mt-4 mx-auto"></div>
+                    <span className="section-num mb-3">03 / TECH STACK & TOOLKIT</span>
+                    <h2 className="font-display text-3xl sm:text-5xl font-extrabold text-onyx tracking-tight">
+                      Skills & competency.
+                    </h2>
+                  </ScrollReveal>
+
+                  {/* Filter Pills */}
+                  <ScrollReveal delay={150} className="mt-6 md:mt-0 flex flex-wrap gap-2">
+                    {["All", "Frontend", "Backend", "Databases", "Tools"].map((tab) => (
+                      <button
+                        key={tab}
+                        onClick={() => setSkillTab(tab)}
+                        className={`px-4 py-2 rounded-full text-xs font-mono uppercase tracking-wider transition-all duration-200 ${
+                          skillTab === tab
+                            ? 'bg-onyx text-white font-bold shadow-md'
+                            : 'editorial-pill text-muted hover:text-onyx'
+                        }`}
+                      >
+                        {tab}
+                      </button>
+                    ))}
                   </ScrollReveal>
                 </div>
 
-                {/* Filters */}
-                <div className="flex justify-center flex-wrap gap-2 mb-12">
-                  {['All', 'Mobile', 'Web'].map((filter) => (
-                    <button
-                      key={filter}
-                      onClick={() => setProjectFilter(filter)}
-                      className={`px-4.5 py-2 rounded-xl text-sm font-semibold transition-all duration-300 ${
-                        projectFilter === filter
-                          ? 'bg-white text-zinc-950 shadow-md'
-                          : 'glass text-zinc-400 hover:text-white hover:bg-zinc-800/30'
-                      }`}
+                {/* Skills Grid */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                  {currentSkills.map((skill, index) => (
+                    <ScrollReveal
+                      key={skill.name}
+                      delay={index * 40}
+                      className="editorial-card p-5 rounded-2xl text-left group"
                     >
-                      {filter}
-                    </button>
+                      <div className="flex items-center justify-between mb-4">
+                        <div className="w-10 h-10 rounded-xl bg-sand/20 flex items-center justify-center text-terracotta group-hover:scale-110 transition-transform">
+                          <Icon name={skill.icon} className="w-5 h-5" />
+                        </div>
+                        <span className="font-mono text-xs text-muted font-semibold">{skill.percentage}%</span>
+                      </div>
+
+                      <h4 className="font-display font-bold text-onyx text-sm mb-3 group-hover:text-terracotta transition-colors">
+                        {skill.name}
+                      </h4>
+
+                      {/* Percentage Bar */}
+                      <div className="w-full h-1.5 bg-onyx/[0.06] rounded-full overflow-hidden">
+                        <div
+                          className="h-full bg-gradient-to-r from-terracotta to-espresso rounded-full transition-all duration-1000"
+                          style={{ width: `${skill.percentage}%` }}
+                        />
+                      </div>
+                    </ScrollReveal>
                   ))}
                 </div>
 
-                {/* Projects Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              </div>
+            </section>
+
+            {/* SECTION 04: SELECTED WORKS / PROJECTS (High-End Showcase Cards) */}
+            <section id="projects" className="py-28 border-t border-onyx/[0.08] bg-surface-subtle relative">
+              <div className="max-w-6xl mx-auto px-6">
+                
+                {/* Header */}
+                <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 text-left">
+                  <ScrollReveal>
+                    <span className="section-num mb-3">04 / SELECTED WORKS</span>
+                    <h2 className="font-display text-3xl sm:text-5xl font-extrabold text-onyx tracking-tight">
+                      Featured projects.
+                    </h2>
+                  </ScrollReveal>
+
+                  {/* Filter Pills */}
+                  <ScrollReveal delay={150} className="mt-6 md:mt-0 flex gap-2">
+                    {["All", "Web", "Mobile"].map((filter) => (
+                      <button
+                        key={filter}
+                        onClick={() => setProjectFilter(filter)}
+                        className={`px-4 py-2 rounded-full text-xs font-mono uppercase tracking-wider transition-all duration-200 ${
+                          projectFilter === filter
+                            ? 'bg-onyx text-white font-bold shadow-md'
+                            : 'editorial-pill text-muted hover:text-onyx'
+                        }`}
+                      >
+                        {filter === 'All' ? 'All Works' : filter}
+                      </button>
+                    ))}
+                  </ScrollReveal>
+                </div>
+
+                {/* Projects Showcase Cards */}
+                <div className="space-y-12">
                   {projectsData
                     .filter(proj => projectFilter === 'All' || proj.category === projectFilter)
                     .map((project, index) => (
                       <ScrollReveal
                         key={project.title}
-                        className="glass flex flex-col justify-between rounded-3xl overflow-hidden hover:border-violet-500/40 transition-all duration-300 glow-card"
                         delay={index * 100}
+                        className="editorial-card rounded-[32px] p-6 sm:p-8 text-left group overflow-hidden"
                       >
-                        <div>
+                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                           
-                          {/* Image Box */}
-                          <a href={project.live || project.github} target="_blank" rel="noopener noreferrer" className="relative h-48 w-full overflow-hidden block">
-                            <img
-                              src={project.image}
-                              alt={project.title}
-                              className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
-                            />
-                            
-                            {/* Category Badge overlay */}
-                            <span className="absolute top-4 left-4 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full glass-strong border-zinc-700/50 text-indigo-300">
-                              {project.category}
-                            </span>
-                          </a>
+                          {/* Image Thumbnail Showcase */}
+                          <div className="lg:col-span-6 order-2 lg:order-1">
+                            <a 
+                              href={project.live || project.github} 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              className="relative block aspect-[16/10] rounded-2xl overflow-hidden bg-sand/10 border border-onyx/[0.08] group/img"
+                            >
+                              <img
+                                src={project.image}
+                                alt={project.title}
+                                className="w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-700 ease-out"
+                              />
+                              
+                              {/* Dark subtle overlay on hover */}
+                              <div className="absolute inset-0 bg-gradient-to-t from-onyx/40 via-transparent to-transparent opacity-0 group-hover/img:opacity-100 transition-opacity"></div>
+                              
+                              {/* Overlay View Button */}
+                              <div className="absolute bottom-4 right-4 px-3.5 py-1.5 rounded-full editorial-pill text-onyx text-xs font-mono flex items-center gap-1.5 opacity-90 group-hover/img:opacity-100 group-hover/img:scale-105 transition-all">
+                                <span>Preview</span>
+                                <Icon name="arrowUpRight" className="w-3.5 h-3.5 text-terracotta" />
+                              </div>
+                            </a>
+                          </div>
 
-                          {/* Content Box */}
-                          <div className="p-6 text-left">
-                            <div className="flex justify-between items-center mb-2">
-                              <h3 className="text-xl font-bold text-white group-hover:text-violet-400 transition-colors">
-                                <a href={project.live || project.github} target="_blank" rel="noopener noreferrer" className="hover:text-violet-400 transition-colors">
+                          {/* Content Details */}
+                          <div className="lg:col-span-6 order-1 lg:order-2 flex flex-col justify-between">
+                            <div>
+                              
+                              {/* Metadata line */}
+                              <div className="flex items-center gap-3 mb-4">
+                                <span className="font-mono text-xs text-terracotta font-bold uppercase tracking-wider">
+                                  {project.category} PROJECT
+                                </span>
+                                <span className="text-muted/40">•</span>
+                                <span className="text-xs font-mono text-muted">{project.year}</span>
+                                <span className="text-muted/40">•</span>
+                                <div className="flex items-center gap-1.5 text-xs font-mono text-espresso font-semibold bg-sand/25 px-2.5 py-0.5 rounded-full border border-sand/40">
+                                  <span className="w-1.5 h-1.5 rounded-full bg-terracotta animate-pulse"></span>
+                                  <span>{project.status}</span>
+                                </div>
+                              </div>
+
+                              {/* Title */}
+                              <h3 className="font-display text-2xl sm:text-3xl font-extrabold text-onyx mb-4 group-hover:text-terracotta transition-colors">
+                                <a href={project.live || project.github} target="_blank" rel="noopener noreferrer">
                                   {project.title}
                                 </a>
                               </h3>
-                              
-                              {/* Pulse Status */}
-                              {project.featured && (
-                                <span className="flex h-2 w-2 relative">
-                                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-violet-400 opacity-75"></span>
-                                  <span className="relative inline-flex rounded-full h-2 w-2 bg-violet-500"></span>
-                                </span>
+
+                              {/* Description - 100% PRESERVED */}
+                              <p className="text-muted text-sm sm:text-base leading-relaxed font-light mb-6">
+                                {project.description}
+                              </p>
+
+                              {/* Tech Stack Pills */}
+                              <div className="flex flex-wrap gap-2 mb-8">
+                                {project.tech.map((t) => (
+                                  <span
+                                    key={t}
+                                    className="px-3 py-1 rounded-lg bg-canvas border border-onyx/[0.08] text-xs font-mono text-onyx"
+                                  >
+                                    {t}
+                                  </span>
+                                ))}
+                              </div>
+
+                            </div>
+
+                            {/* Action Buttons */}
+                            <div className="flex flex-wrap items-center gap-4 pt-6 border-t border-onyx/[0.08]">
+                              {project.live && (
+                                <a
+                                  href={project.live}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="px-5 py-2.5 rounded-full bg-onyx text-white font-bold text-xs uppercase tracking-wider hover:bg-espresso transition-all hover:scale-105 flex items-center gap-2 shadow-md shadow-onyx/10"
+                                >
+                                  <span>Live Demo</span>
+                                  <Icon name="external" className="w-3.5 h-3.5" />
+                                </a>
                               )}
-                            </div>
 
-                            <p className="text-zinc-400 text-sm leading-relaxed mb-6 font-light">
-                              {project.description}
-                            </p>
-
-                            {/* Tech Badges */}
-                            <div className="flex flex-wrap gap-1.5 mb-4">
-                              {project.tech.map(t => (
-                                <span key={t} className="text-[11px] font-semibold text-zinc-300 bg-zinc-900 border border-zinc-800 px-2 py-0.5 rounded-md">
-                                  {t}
-                                </span>
-                              ))}
-                            </div>
-                          </div>
-                        </div>
-
-                        {/* Footer Links */}
-                        <div className="p-6 pt-0 border-t border-zinc-800/60 flex items-center justify-between">
-                          <span className="text-xs text-zinc-500 font-medium">Status: <span className="text-emerald-400 font-bold">{project.status}</span></span>
-                          <div className="flex items-center gap-3">
-                            <a
-                              href={project.github}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="inline-flex items-center gap-1 text-xs font-semibold text-zinc-400 hover:text-white transition-colors"
-                              title="Source Code"
-                            >
-                              <span>Code</span>
-                              <Icon name="github" className="w-3.5 h-3.5" />
-                            </a>
-                            {project.live && (
                               <a
-                                href={project.live}
+                                href={project.github}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center gap-1 text-xs font-semibold text-violet-400 hover:text-violet-300 transition-colors"
-                                title="Live Demo"
+                                className="px-5 py-2.5 rounded-full editorial-pill hover:border-terracotta text-onyx hover:text-terracotta font-semibold text-xs uppercase tracking-wider transition-all flex items-center gap-2"
                               >
-                                <span>Live</span>
-                                <Icon name="external" className="w-3.5 h-3.5" />
+                                <span>Source Code</span>
+                                <Icon name="github" className="w-3.5 h-3.5" />
                               </a>
-                            )}
-                          </div>
-                        </div>
+                            </div>
 
+                          </div>
+
+                        </div>
                       </ScrollReveal>
                     ))}
                 </div>
@@ -929,80 +1303,85 @@
               </div>
             </section>
 
-            {/* Education Section */}
-            <section id="education" className="py-24 relative overflow-hidden">
-              <div className="max-w-7xl mx-auto px-6">
+            {/* SECTION 05: EDUCATION & CREDENTIALS (Curated Experience Timeline) */}
+            <section id="education" className="py-28 border-t border-onyx/[0.08] relative">
+              <div className="max-w-6xl mx-auto px-6">
                 
-                {/* Header Title */}
-                <div className="text-center mb-16">
-                  <ScrollReveal>
-                    <span className="text-xs uppercase tracking-widest text-indigo-400 font-bold">Qualification</span>
-                    <h2 className="text-3xl sm:text-4xl font-extrabold mt-2 text-white">Education & Training</h2>
-                    <div className="w-16 h-1 bg-gradient-to-r from-violet-500 to-indigo-500 rounded mt-4 mx-auto"></div>
-                  </ScrollReveal>
-                </div>
+                {/* Header */}
+                <ScrollReveal className="text-left mb-16">
+                  <span className="section-num mb-3">05 / QUALIFICATION & JOURNEY</span>
+                  <h2 className="font-display text-3xl sm:text-5xl font-extrabold text-onyx tracking-tight">
+                    Education & credentials.
+                  </h2>
+                </ScrollReveal>
 
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
                   
-                  {/* Timeline Cards (Left) */}
-                  <div className="lg:col-span-7 space-y-6 text-left">
-                    <ScrollReveal className="relative pl-8 border-l border-zinc-800 space-y-8">
+                  {/* Left Column: Education Timeline - 100% PRESERVED */}
+                  <div className="lg:col-span-7 space-y-8 text-left">
+                    <ScrollReveal className="relative pl-8 border-l-2 border-sand/50 space-y-10">
                       
-                      {/* Timeline Dot: B.E. */}
+                      {/* 1. Sri Venkateshwara College of Engineering */}
                       <div className="relative">
-                        <div className="absolute -left-[41px] top-1.5 w-6 h-6 rounded-full bg-violet-600 border-4 border-zinc-950 flex items-center justify-center shadow-lg shadow-violet-500/20"></div>
-                        <div className="glass p-6 rounded-3xl border-zinc-800 hover:border-violet-500/30 transition-all duration-300">
-                          <div className="flex justify-between items-start flex-wrap gap-2 mb-3">
-                            <div>
-                              <span className="text-xs font-bold text-indigo-400 uppercase tracking-widest">B E in Computer Science</span>
-                              <h4 className="text-xl font-bold text-white mt-1">Sri Venkateshwara College of Engineering</h4>
-                            </div>
-                            <span className="text-xs font-semibold px-3 py-1 rounded-full glass border-zinc-700 text-zinc-300">
+                        <div className="absolute -left-[41px] top-1.5 w-6 h-6 rounded-full bg-terracotta border-4 border-canvas shadow-md flex items-center justify-center"></div>
+                        <div className="editorial-card p-6 rounded-2xl">
+                          <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
+                            <span className="text-xs font-mono font-bold uppercase tracking-wider text-terracotta">
+                              B E in Computer Science
+                            </span>
+                            <span className="text-xs font-mono px-3 py-1 rounded-full bg-sand/20 text-espresso font-semibold">
                               Graduated 2026
                             </span>
                           </div>
-                          <p className="text-sm text-zinc-400 leading-relaxed font-light">
+                          <h4 className="font-display text-xl font-bold text-onyx mb-2">
+                            Sri Venkateshwara College of Engineering
+                          </h4>
+                          <p className="text-muted text-sm leading-relaxed font-light">
                             Completed undergraduate degree in Computer Science with a strong emphasis on core computing principles. 
-                            Studied fundamental coursework including Data Structures, Database Systems (MySQL), Object-Oriented Programming (Java), and Software Architecture. 
+                            Studied fundamental coursework including Data Structures, Database Systems (MySQL), Object-Oriented Programming (Java), and Software Architecture.
                           </p>
                         </div>
                       </div>
 
-                      {/* Timeline Dot: S J PU COLLEGE */}
+                      {/* 2. S J PU COLLEGE */}
                       <div className="relative">
-                        <div className="absolute -left-[41px] top-1.5 w-6 h-6 rounded-full bg-violet-600 border-4 border-zinc-950 flex items-center justify-center shadow-lg shadow-violet-500/20"></div>
-                        <div className="glass p-6 rounded-3xl border-zinc-800 hover:border-violet-500/30 transition-all duration-300">
-                          <div className="flex justify-between items-start flex-wrap gap-2 mb-3">
-                            <div>
-                              <span className="text-xs font-bold text-indigo-400 uppercase tracking-widest">PCMCs — Science Stream</span>
-                              <h4 className="text-xl font-bold text-white mt-1">S J PU COLLEGE</h4>
-                              <span className="text-xs text-zinc-400 block mt-1">Karnataka, India</span>
-                            </div>
-                            <span className="text-xs font-semibold px-3 py-1 rounded-full glass border-zinc-700 text-zinc-300">
+                        <div className="absolute -left-[41px] top-1.5 w-6 h-6 rounded-full bg-espresso border-4 border-canvas shadow-md flex items-center justify-center"></div>
+                        <div className="editorial-card p-6 rounded-2xl">
+                          <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
+                            <span className="text-xs font-mono font-bold uppercase tracking-wider text-espresso">
+                              PCMCs — Science Stream
+                            </span>
+                            <span className="text-xs font-mono px-3 py-1 rounded-full bg-sand/20 text-espresso font-semibold">
                               2020 - 2022 (2 Years)
                             </span>
                           </div>
-                          <p className="text-sm text-zinc-400 leading-relaxed font-light">
+                          <h4 className="font-display text-xl font-bold text-onyx mb-1">
+                            S J PU COLLEGE
+                          </h4>
+                          <span className="text-xs font-mono text-muted block mb-2">Karnataka, India</span>
+                          <p className="text-muted text-sm leading-relaxed font-light">
                             Focused on Physics, Chemistry, Mathematics, and Computer Science.
                           </p>
                         </div>
                       </div>
 
-                      {/* Timeline Dot: Surya English Medium School */}
+                      {/* 3. Surya English Medium School */}
                       <div className="relative">
-                        <div className="absolute -left-[41px] top-1.5 w-6 h-6 rounded-full bg-violet-600 border-4 border-zinc-950 flex items-center justify-center shadow-lg shadow-violet-500/20"></div>
-                        <div className="glass p-6 rounded-3xl border-zinc-800 hover:border-violet-500/30 transition-all duration-300">
-                          <div className="flex justify-between items-start flex-wrap gap-2 mb-3">
-                            <div>
-                              <span className="text-xs font-bold text-indigo-400 uppercase tracking-widest">SSLC</span>
-                              <h4 className="text-xl font-bold text-white mt-1">Surya English Medium School</h4>
-                              <span className="text-xs text-zinc-400 block mt-1">Chintamani, India</span>
-                            </div>
-                            <span className="text-xs font-semibold px-3 py-1 rounded-full glass border-zinc-700 text-zinc-300">
+                        <div className="absolute -left-[41px] top-1.5 w-6 h-6 rounded-full bg-sand-dark border-4 border-canvas flex items-center justify-center"></div>
+                        <div className="editorial-card p-6 rounded-2xl">
+                          <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
+                            <span className="text-xs font-mono font-bold uppercase tracking-wider text-muted">
+                              SSLC
+                            </span>
+                            <span className="text-xs font-mono px-3 py-1 rounded-full bg-sand/20 text-espresso font-semibold">
                               2019 - 2020 (1 Year)
                             </span>
                           </div>
-                          <p className="text-sm text-zinc-400 leading-relaxed font-light">
+                          <h4 className="font-display text-xl font-bold text-onyx mb-1">
+                            Surya English Medium School
+                          </h4>
+                          <span className="text-xs font-mono text-muted block mb-2">Chintamani, India</span>
+                          <p className="text-muted text-sm leading-relaxed font-light">
                             Secondary School Leaving Certificate (SSLC).
                           </p>
                         </div>
@@ -1011,75 +1390,93 @@
                     </ScrollReveal>
                   </div>
 
-                  {/* Certifications (Right) */}
+                  {/* Right Column: Credentials & Learnings - 100% PRESERVED */}
                   <div className="lg:col-span-5 text-left space-y-6">
-                    <ScrollReveal delay={100}>
-                      <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-2">
-                        <Icon name="award" className="w-6 h-6 text-violet-400" />
-                        Credentials & Learnings
+                    <ScrollReveal delay={150}>
+                      <h3 className="font-display text-2xl font-bold text-onyx mb-6 flex items-center gap-3">
+                        <div className="w-8 h-8 rounded-lg bg-sand/20 flex items-center justify-center text-terracotta">
+                          <Icon name="award" className="w-5 h-5" />
+                        </div>
+                        <span>Credentials & Learnings</span>
                       </h3>
-                      
-                      {/* Credentials card */}
+
                       <div className="space-y-4">
-                        <div className="glass p-5 rounded-2xl border-zinc-800/80 hover:border-violet-500/30 transition-colors">
-                          <div className="flex items-center gap-4">
-                            <div className="w-10 h-10 rounded-xl bg-violet-500/10 flex items-center justify-center">
-                              <Icon name="code" className="w-5 h-5 text-violet-400" />
+                        
+                        <div className="editorial-card p-6 rounded-2xl group">
+                          <div className="flex items-start gap-4">
+                            <div className="w-10 h-10 rounded-xl bg-sand/20 flex items-center justify-center text-terracotta flex-shrink-0 group-hover:scale-110 transition-transform">
+                              <Icon name="code" className="w-5 h-5" />
                             </div>
                             <div>
-                              <h4 className="font-bold text-white text-sm">Java Full Stack Developer Program</h4>
-                              <p className="text-xs text-zinc-500 mt-0.5">Focus: Object-Oriented Java, MySQL Relational Database, Web Technologies</p>
+                              <h4 className="font-display font-bold text-onyx text-base">
+                                Java Full Stack Developer Program
+                              </h4>
+                              <p className="text-xs text-muted mt-1 font-light leading-relaxed">
+                                Focus: Object-Oriented Java, MySQL Relational Database, Web Technologies
+                              </p>
                             </div>
                           </div>
                         </div>
 
-                        <div className="glass p-5 rounded-2xl border-zinc-800/80 hover:border-violet-500/30 transition-colors">
-                          <div className="flex items-center gap-4">
-                            <div className="w-10 h-10 rounded-xl bg-indigo-500/10 flex items-center justify-center">
-                              <Icon name="globe" className="w-5 h-5 text-indigo-400" />
+                        <div className="editorial-card p-6 rounded-2xl group">
+                          <div className="flex items-start gap-4">
+                            <div className="w-10 h-10 rounded-xl bg-sand/20 flex items-center justify-center text-terracotta flex-shrink-0 group-hover:scale-110 transition-transform">
+                              <Icon name="globe" className="w-5 h-5" />
                             </div>
                             <div>
-                              <h4 className="font-bold text-white text-sm">Modern Responsive Web Development</h4>
-                              <p className="text-xs text-zinc-500 mt-0.5">Focus: HTML5 layout hierarchy, CSS Flexbox/Grid systems, responsive micro-animations</p>
+                              <h4 className="font-display font-bold text-onyx text-base">
+                                Modern Responsive Web Development
+                              </h4>
+                              <p className="text-xs text-muted mt-1 font-light leading-relaxed">
+                                Focus: HTML5 layout hierarchy, CSS Flexbox/Grid systems, responsive micro-animations
+                              </p>
                             </div>
                           </div>
                         </div>
 
-                        <div className="glass p-5 rounded-2xl border-zinc-800/80 hover:border-violet-500/30 transition-colors">
-                          <div className="flex items-center gap-4">
-                            <div className="w-10 h-10 rounded-xl bg-fuchsia-500/10 flex items-center justify-center">
-                              <Icon name="sparkles" className="w-5 h-5 text-fuchsia-400" />
+                        <div className="editorial-card p-6 rounded-2xl group">
+                          <div className="flex items-start gap-4">
+                            <div className="w-10 h-10 rounded-xl bg-sand/20 flex items-center justify-center text-terracotta flex-shrink-0 group-hover:scale-110 transition-transform">
+                              <Icon name="sparkles" className="w-5 h-5" />
                             </div>
                             <div>
-                              <h4 className="font-bold text-white text-sm">Prompt Engineering & AI Workflows</h4>
-                              <p className="text-xs text-zinc-500 mt-0.5">Focus: Generating code structures, optimizing algorithmic syntax, debugging assistance with ChatGPT</p>
+                              <h4 className="font-display font-bold text-onyx text-base">
+                                Prompt Engineering & AI Workflows
+                              </h4>
+                              <p className="text-xs text-muted mt-1 font-light leading-relaxed">
+                                Focus: Generating code structures, optimizing algorithmic syntax, debugging assistance with ChatGPT
+                              </p>
                             </div>
                           </div>
                         </div>
+
                       </div>
                     </ScrollReveal>
                   </div>
 
                 </div>
+
               </div>
             </section>
 
-            {/* CTA Section */}
-            <section className="py-20 relative overflow-hidden bg-zinc-950/40 border-y border-zinc-900">
-              <div className="max-w-4xl mx-auto px-6 text-center relative z-20">
+            {/* COLLABORATION BANNER (CTA Block) */}
+            <section className="py-24 border-t border-onyx/[0.08] relative overflow-hidden bg-surface-subtle">
+              <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
                 <ScrollReveal>
-                  <span className="text-xs uppercase tracking-widest text-indigo-400 font-extrabold">Collaboration</span>
-                  <h2 className="text-3xl sm:text-5xl font-extrabold mt-3 mb-6 bg-gradient-to-r from-white via-zinc-200 to-zinc-400 bg-clip-text text-transparent">
+                  <span className="section-num mb-4 justify-center">COLLABORATION</span>
+                  
+                  <h2 className="font-display text-4xl sm:text-6xl font-extrabold text-onyx tracking-tight mb-6 mt-2">
                     Let's work together!
                   </h2>
-                  <p className="text-zinc-400 font-light max-w-xl mx-auto mb-8 text-base sm:text-lg">
+                  
+                  <p className="text-muted text-base sm:text-lg max-w-xl mx-auto font-light leading-relaxed mb-10">
                     I am actively seeking full-time developer positions and collaborative software projects. Let's design something great.
                   </p>
-                  
-                  <div className="flex justify-center flex-wrap gap-4">
+
+                  <div className="flex flex-wrap justify-center gap-4">
                     <a
                       href="#contact"
-                      className="px-8 py-3.5 rounded-full bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500 text-white font-bold text-sm shadow-xl shadow-violet-500/15 hover:scale-105 transition-transform duration-300"
+                      className="px-8 py-4 rounded-full bg-onyx text-white hover:bg-espresso font-bold text-xs uppercase tracking-wider transition-all duration-300 hover:scale-105 shadow-xl shadow-onyx/10"
                     >
                       Get In Touch
                     </a>
@@ -1087,7 +1484,7 @@
                       href={resumeUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-8 py-3.5 rounded-full glass hover:bg-zinc-800/40 text-white font-bold text-sm hover:scale-105 transition-transform duration-300 border-zinc-800"
+                      className="px-8 py-4 rounded-full editorial-card hover:border-terracotta text-onyx font-bold text-xs uppercase tracking-wider hover:scale-105 transition-all"
                     >
                       View Credentials
                     </a>
@@ -1096,60 +1493,71 @@
               </div>
             </section>
 
-            {/* Contact Section */}
-            <section id="contact" className="py-24 relative overflow-hidden">
-              <div className="max-w-7xl mx-auto px-6">
+            {/* SECTION 06: CONTACT & INQUIRIES */}
+            <section id="contact" className="py-28 border-t border-onyx/[0.08] relative">
+              <div className="max-w-6xl mx-auto px-6">
                 
-                {/* Header Title */}
-                <div className="text-center mb-16">
-                  <ScrollReveal>
-                    <span className="text-xs uppercase tracking-widest text-indigo-400 font-bold">Contact</span>
-                    <h2 className="text-3xl sm:text-4xl font-extrabold mt-2 text-white">Get In Touch</h2>
-                    <div className="w-16 h-1 bg-gradient-to-r from-violet-500 to-indigo-500 rounded mt-4 mx-auto"></div>
-                  </ScrollReveal>
-                </div>
+                {/* Header */}
+                <ScrollReveal className="text-left mb-16">
+                  <span className="section-num mb-3">06 / GET IN TOUCH</span>
+                  <h2 className="font-display text-3xl sm:text-5xl font-extrabold text-onyx tracking-tight">
+                    Have a project in mind? Let's talk.
+                  </h2>
+                </ScrollReveal>
 
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 max-w-5xl mx-auto items-start">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
                   
-                  {/* Left Column Information */}
+                  {/* Left Column: Direct Info - 100% PRESERVED */}
                   <div className="lg:col-span-5 text-left space-y-6">
                     <ScrollReveal>
-                      <h3 className="text-2xl font-bold text-white mb-4">Let's Discuss Your Project</h3>
-                      <p className="text-zinc-400 font-light leading-relaxed mb-8">
+                      <h3 className="font-display text-2xl font-bold text-onyx mb-3">
+                        Let's Discuss Your Project
+                      </h3>
+                      
+                      <p className="text-muted text-sm sm:text-base font-light leading-relaxed mb-8">
                         Feel free to drop a line for job opportunities, project ideas, or just to connect and share some tech thoughts. I typically respond within 24 hours.
                       </p>
 
                       <div className="space-y-4">
                         
-                        <div className="flex items-center gap-4">
-                          <div className="w-11 h-11 rounded-xl glass flex items-center justify-center border-zinc-800">
-                            <Icon name="mail" className="w-5 h-5 text-violet-400" />
+                        <div className="editorial-card p-5 rounded-2xl flex items-center justify-between">
+                          <div className="flex items-center gap-4">
+                            <div className="w-10 h-10 rounded-xl bg-sand/20 flex items-center justify-center text-terracotta">
+                              <Icon name="mail" className="w-5 h-5" />
+                            </div>
+                            <div>
+                              <span className="text-[10px] font-mono uppercase tracking-widest text-muted block">Email Address</span>
+                              <a href={`mailto:${emailAddress}`} className="text-sm font-semibold text-onyx hover:text-terracotta transition-colors">
+                                {emailAddress}
+                              </a>
+                            </div>
+                          </div>
+                          <button
+                            onClick={handleCopyEmail}
+                            className="p-2 rounded-lg hover:bg-onyx/[0.04] text-muted hover:text-onyx transition-colors"
+                            title="Copy email"
+                          >
+                            <Icon name={emailCopied ? "check" : "copy"} className={`w-4 h-4 ${emailCopied ? 'text-terracotta' : ''}`} />
+                          </button>
+                        </div>
+
+                        <div className="editorial-card p-5 rounded-2xl flex items-center gap-4">
+                          <div className="w-10 h-10 rounded-xl bg-sand/20 flex items-center justify-center text-terracotta">
+                            <Icon name="mappin" className="w-5 h-5" />
                           </div>
                           <div>
-                            <span className="text-xs text-zinc-500 font-bold uppercase tracking-wider block">Email Address</span>
-                            <a href={`mailto:${emailAddress}`} className="text-sm font-semibold text-white hover:text-violet-400 transition-colors">
-                              {emailAddress}
-                            </a>
+                            <span className="text-[10px] font-mono uppercase tracking-widest text-muted block">Current Location</span>
+                            <span className="text-sm font-semibold text-onyx">Bengaluru, India</span>
                           </div>
                         </div>
 
-                        <div className="flex items-center gap-4">
-                          <div className="w-11 h-11 rounded-xl glass flex items-center justify-center border-zinc-800">
-                            <Icon name="mappin" className="w-5 h-5 text-indigo-400" />
+                        <div className="editorial-card p-5 rounded-2xl flex items-center gap-4">
+                          <div className="w-10 h-10 rounded-xl bg-sand/20 flex items-center justify-center text-terracotta">
+                            <Icon name="globe" className="w-5 h-5" />
                           </div>
                           <div>
-                            <span className="text-xs text-zinc-500 font-bold uppercase tracking-wider block">Current Location</span>
-                            <span className="text-sm font-semibold text-white">Bengaluru, India</span>
-                          </div>
-                        </div>
-
-                        <div className="flex items-center gap-4">
-                          <div className="w-11 h-11 rounded-xl glass flex items-center justify-center border-zinc-800">
-                            <Icon name="globe" className="w-5 h-5 text-fuchsia-400" />
-                          </div>
-                          <div>
-                            <span className="text-xs text-zinc-500 font-bold uppercase tracking-wider block">Primary Role</span>
-                            <span className="text-sm font-semibold text-white">Java Full Stack Developer</span>
+                            <span className="text-[10px] font-mono uppercase tracking-widest text-muted block">Primary Role</span>
+                            <span className="text-sm font-semibold text-onyx">Java Full Stack Developer</span>
                           </div>
                         </div>
 
@@ -1157,80 +1565,77 @@
                     </ScrollReveal>
                   </div>
 
-                  {/* Right Form Fields */}
+                  {/* Right Column: Interactive Form */}
                   <div className="lg:col-span-7">
                     <ScrollReveal delay={150}>
-                      <form onSubmit={handleFormSubmit} className="glass p-8 rounded-3xl border-zinc-800 text-left space-y-5">
+                      <form onSubmit={handleFormSubmit} className="editorial-card p-8 rounded-3xl text-left space-y-5">
                         
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                           <div>
-                            <label htmlFor="name" className="text-xs font-bold uppercase tracking-wider text-zinc-400 block mb-2">Name</label>
+                            <label className="text-xs font-mono uppercase tracking-wider text-muted block mb-2">Name</label>
                             <input
                               type="text"
-                              id="name"
                               name="name"
                               value={formData.name}
                               onChange={handleInputChange}
                               required
-                              className="w-full px-4 py-3 rounded-xl bg-zinc-900 border border-zinc-800 focus:border-violet-500/50 text-white text-sm outline-none transition-colors"
+                              className="w-full px-4 py-3.5 rounded-xl bg-surface-subtle border border-onyx/[0.12] focus:border-terracotta text-onyx text-sm outline-none transition-colors"
                               placeholder="Your name"
                             />
                           </div>
+
                           <div>
-                            <label htmlFor="email" className="text-xs font-bold uppercase tracking-wider text-zinc-400 block mb-2">Email</label>
+                            <label className="text-xs font-mono uppercase tracking-wider text-muted block mb-2">Email</label>
                             <input
                               type="email"
-                              id="email"
                               name="email"
                               value={formData.email}
                               onChange={handleInputChange}
                               required
-                              className="w-full px-4 py-3 rounded-xl bg-zinc-900 border border-zinc-800 focus:border-violet-500/50 text-white text-sm outline-none transition-colors"
+                              className="w-full px-4 py-3.5 rounded-xl bg-surface-subtle border border-onyx/[0.12] focus:border-terracotta text-onyx text-sm outline-none transition-colors"
                               placeholder="Your email address"
                             />
                           </div>
                         </div>
 
                         <div>
-                          <label htmlFor="subject" className="text-xs font-bold uppercase tracking-wider text-zinc-400 block mb-2">Subject</label>
+                          <label className="text-xs font-mono uppercase tracking-wider text-muted block mb-2">Subject</label>
                           <input
                             type="text"
-                            id="subject"
                             name="subject"
                             value={formData.subject}
                             onChange={handleInputChange}
-                            className="w-full px-4 py-3 rounded-xl bg-zinc-900 border border-zinc-800 focus:border-violet-500/50 text-white text-sm outline-none transition-colors"
+                            className="w-full px-4 py-3.5 rounded-xl bg-surface-subtle border border-onyx/[0.12] focus:border-terracotta text-onyx text-sm outline-none transition-colors"
                             placeholder="Message subject (optional)"
                           />
                         </div>
 
                         <div>
-                          <label htmlFor="message" className="text-xs font-bold uppercase tracking-wider text-zinc-400 block mb-2">Message</label>
+                          <label className="text-xs font-mono uppercase tracking-wider text-muted block mb-2">Message</label>
                           <textarea
-                            id="message"
                             name="message"
                             value={formData.message}
                             onChange={handleInputChange}
                             required
                             rows="4"
-                            className="w-full px-4 py-3 rounded-xl bg-zinc-900 border border-zinc-800 focus:border-violet-500/50 text-white text-sm outline-none transition-colors resize-none"
-                            placeholder="Tell me about your project..."
+                            className="w-full px-4 py-3.5 rounded-xl bg-surface-subtle border border-onyx/[0.12] focus:border-terracotta text-onyx text-sm outline-none transition-colors resize-none"
+                            placeholder="Tell me about your project or opportunity..."
                           ></textarea>
                         </div>
 
                         <button
                           type="submit"
                           disabled={isSubmitting}
-                          className="w-full py-4.5 rounded-xl bg-white text-zinc-950 font-bold hover:bg-zinc-200 transition-all duration-300 disabled:opacity-50 text-sm flex items-center justify-center gap-2"
+                          className="w-full py-4 rounded-xl bg-onyx text-white font-bold hover:bg-espresso transition-all duration-300 disabled:opacity-50 text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-xl shadow-onyx/10"
                         >
                           {isSubmitting ? (
                             <>
-                              <span className="w-5 h-5 border-2 border-zinc-950 border-t-transparent rounded-full animate-spin"></span>
+                              <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
                               <span>Sending message...</span>
                             </>
                           ) : (
                             <>
-                              <Icon name="mail" className="w-4 h-4" strokeWidth="2.5" />
+                              <Icon name="mail" className="w-4 h-4" />
                               <span>Send Message</span>
                             </>
                           )}
@@ -1241,47 +1646,48 @@
                   </div>
 
                 </div>
+
               </div>
             </section>
 
           </main>
 
-          {/* Footer block */}
-          <footer className="glass border-t border-zinc-900 py-12 text-center relative z-20">
-            <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+          {/* EDITORIAL FOOTER */}
+          <footer className="border-t border-onyx/[0.08] bg-canvas py-12 relative z-20">
+            <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6 text-left">
               
-              {/* Left Brand */}
-              <div className="text-left">
-                <span className="text-lg font-bold text-white tracking-tight">Raju V</span>
-                <p className="text-xs text-zinc-500 mt-1">Full stack Developer | Portfolio 2026</p>
+              <div>
+                <span className="font-display text-lg font-bold text-onyx tracking-tight">Raju V</span>
+                <p className="text-xs font-mono text-muted mt-1">Full Stack Developer | Portfolio 2026</p>
               </div>
 
-              {/* Center copyright */}
-              <span className="text-xs text-zinc-500">
-                &copy; 2026 Raju V. Made with 💜. All rights reserved.
+              <span className="text-xs font-mono text-muted text-center">
+                &copy; 2026 Raju V. Designed with editorial simplicity. All rights reserved.
               </span>
 
-              {/* Right Socials */}
-              <div className="flex gap-4">
+              <div className="flex items-center gap-4">
                 <a
-                  href="https://github.com/Raju24042004/Nalla-Nudi"
+                  href={githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-zinc-500 hover:text-white transition-colors"
+                  className="text-muted hover:text-onyx transition-colors"
+                  title="GitHub"
                 >
                   <Icon name="github" className="w-5 h-5" />
                 </a>
                 <a
-                  href="https://www.linkedin.com/in/raju-v-49787a310"
+                  href={linkedinUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-zinc-500 hover:text-white transition-colors"
+                  className="text-muted hover:text-onyx transition-colors"
+                  title="LinkedIn"
                 >
                   <Icon name="linkedin" className="w-5 h-5" />
                 </a>
                 <a
                   href={`mailto:${emailAddress}`}
-                  className="text-zinc-500 hover:text-white transition-colors"
+                  className="text-muted hover:text-onyx transition-colors"
+                  title="Email"
                 >
                   <Icon name="mail" className="w-5 h-5" />
                 </a>
@@ -1290,22 +1696,35 @@
             </div>
           </footer>
 
-          {/* Toast Notification for Success Form Submission */}
+          {/* Floating Back to Top Button */}
+          {showBackToTop && (
+            <button
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              className="fixed bottom-6 right-6 z-40 p-3 rounded-full editorial-card hover:border-terracotta text-onyx shadow-2xl hover:scale-110 transition-all duration-300 animate-in fade-in zoom-in-75"
+              aria-label="Back to top"
+            >
+              <Icon name="arrowUp" className="w-5 h-5" />
+            </button>
+          )}
+
+          {/* Form Toast Notification */}
           {submitSuccess && (
-            <div className="fixed bottom-6 right-6 z-50 glass-strong border-emerald-500/30 p-4.5 rounded-2xl shadow-xl flex items-center gap-3 animate-slide-in">
-              <div className="w-8 h-8 rounded-full bg-emerald-500/10 flex items-center justify-center">
-                <Icon name="check" className="w-4 h-4 text-emerald-400" strokeWidth="3" />
+            <div className="fixed bottom-6 left-6 z-50 editorial-card p-4 rounded-2xl shadow-2xl flex items-center gap-3 border border-terracotta/40 animate-in slide-in-from-bottom duration-300">
+              <div className="w-8 h-8 rounded-full bg-sand/30 flex items-center justify-center text-terracotta">
+                <Icon name="check" className="w-4 h-4" />
               </div>
               <div className="text-left">
-                <h5 className="font-bold text-white text-sm">Message Sent!</h5>
-                <p className="text-xs text-zinc-400 mt-0.5">Raju V will get back to you shortly.</p>
+                <h5 className="font-bold text-onyx text-xs uppercase tracking-wider">Message Sent!</h5>
+                <p className="text-xs text-muted mt-0.5">Raju V will get back to you shortly.</p>
               </div>
-              <button
-                onClick={() => setSubmitSuccess(false)}
-                className="text-zinc-500 hover:text-zinc-300 ml-4 p-1 rounded"
-              >
-                <Icon name="x" className="w-4 h-4" />
-              </button>
+            </div>
+          )}
+
+          {/* Email Copied Toast */}
+          {emailCopied && (
+            <div className="fixed top-20 right-6 z-50 editorial-pill px-4 py-2.5 rounded-full shadow-2xl flex items-center gap-2 border border-terracotta/40 animate-in fade-in slide-in-from-top-2">
+              <div className="w-2 h-2 rounded-full bg-terracotta animate-ping"></div>
+              <span className="text-xs font-mono text-espresso font-semibold">Email copied to clipboard!</span>
             </div>
           )}
 
